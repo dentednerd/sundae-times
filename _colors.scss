@@ -1,0 +1,119 @@
+// BASE VARIABLES
+$blue-100: hsl(180, 25%, 10%);
+$blue-200: hsl(180, 25%, 20%);
+$blue-300: hsl(180, 25%, 30%);
+$blue-400: hsl(180, 25%, 40%);
+$blue-500: hsl(180, 25%, 50%);
+$blue-600: hsl(180, 25%, 60%);
+$blue-700: hsl(180, 25%, 70%);
+$blue-800: hsl(180, 25%, 80%);
+$blue-900: hsl(180, 25%, 90%);
+$blue-950: hsl(180, 25%, 95%);
+
+$green-100: hsl(140, 25%, 10%);
+$green-200: hsl(140, 25%, 20%);
+$green-300: hsl(140, 25%, 30%);
+$green-400: hsl(140, 25%, 40%);
+$green-500: hsl(140, 25%, 50%);
+$green-600: hsl(140, 25%, 60%);
+$green-700: hsl(140, 25%, 70%);
+$green-800: hsl(140, 25%, 80%);
+$green-900: hsl(140, 25%, 90%);
+$green-950: hsl(140, 25%, 95%);
+
+$red-100: hsl(0, 80%, 10%);
+$red-200: hsl(0, 80%, 20%);
+$red-300: hsl(0, 80%, 30%);
+$red-400: hsl(0, 80%, 40%);
+$red-500: hsl(0, 80%, 50%);
+$red-600: hsl(0, 80%, 60%);
+$red-700: hsl(0, 80%, 70%);
+$red-800: hsl(0, 80%, 80%);
+$red-900: hsl(0, 80%, 90%);
+$red-950: hsl(0, 80%, 95%);
+
+$yellow-100: hsl(50, 100%, 10%);
+$yellow-200: hsl(50, 100%, 20%);
+$yellow-300: hsl(50, 100%, 30%);
+$yellow-400: hsl(50, 100%, 40%);
+$yellow-500: hsl(50, 100%, 50%);
+$yellow-600: hsl(50, 100%, 60%);
+$yellow-700: hsl(50, 100%, 70%);
+$yellow-800: hsl(50, 100%, 80%);
+$yellow-900: hsl(50, 100%, 90%);
+$yellow-950: hsl(50, 100%, 95%);
+
+$brown-100: hsl(0, 14%, 10%);
+$brown-200: hsl(0, 14%, 20%);
+$brown-300: hsl(0, 14%, 30%);
+$brown-400: hsl(0, 14%, 40%);
+$brown-500: hsl(0, 14%, 50%);
+$brown-600: hsl(0, 14%, 60%);
+$brown-700: hsl(0, 14%, 70%);
+$brown-800: hsl(0, 14%, 80%);
+$brown-900: hsl(0, 14%, 90%);
+$brown-950: hsl(0, 14%, 95%);
+
+// SEMANTIC VARIABLES
+$body-bg: $yellow-950;
+$body-shadow: $brown-600;
+$text: $brown-500;
+
+$article-bg: $blue-700;
+$article-bg-shadow: $blue-500;
+
+$article-heading-fg: $brown-500;
+$article-heading-bg: $yellow-800;
+$article-heading-fg-shadow: $yellow-500;
+
+$article-content-bg: $yellow-900;
+$article-content-shadow: $yellow-600; // TODO: needed?
+
+$heading-1: $blue-700;
+$heading-1-shadow: $brown-900;
+$heading-shadow: $brown-800;
+$heading-6: $brown-700;
+
+$link-fg: $red-700;
+$link-bg: $red-800;
+
+$blockquote-bg: $red-800;
+$blockquote-border: $red-700;
+$blockquote-fg: $brown-300;
+$blockquote-link-fg: $red-400;
+$blockquote-link-bg: $yellow-900;
+
+$list-border: $brown-600;
+
+$pre-bg: $yellow-800;
+$pre-border: $yellow-600;
+
+$label-bg: $yellow-800;
+$label-shadow: $brown-700;
+
+$input-bg: $blue-900;
+$input-bg-shadow: $blue-700;
+$input-shadow: $brown-700;
+$input-fg: $blue-300;
+$input-placeholder: $blue-600;
+
+$button-bg: $blue-400;
+$button-bg-shadow: $blue-200;
+$button-fg: $yellow-900;
+$button-hover-fg: $yellow-700;
+
+$success-bg: $green-600;
+$success-shadow: $green-400;
+
+$info-bg: $blue-600;
+$info-shadow: $blue-400;
+
+$error-bg: $red-700;
+$error-shadow: $red-600;
+
+$warning-bg: $yellow-700;
+$warning-shadow: $yellow-500;
+$warning-fg: $brown-400;
+
+$popover-backdrop: color-mix(in hsl, $blue-300, transparent 50%);
+$popover-shadow: $blue-300;

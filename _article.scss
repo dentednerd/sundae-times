@@ -1,0 +1,54 @@
+@use './colors';
+@use './fonts';
+
+article {
+  $spacing: clamp(0.5rem, 2vw + 0.25rem, 2rem);
+
+  background: colors.$article-bg;
+  max-inline-size: 100%;
+  margin: 4rem auto;
+  padding: $spacing;
+  block-size: auto;
+  box-shadow: 0 4px 4px colors.$body-shadow;
+
+  @media(min-width: 768px) {
+    padding: 2rem;
+  }
+
+  &:first-of-type {
+    margin-block-start: 2rem;
+  }
+
+  h2 {
+    display: block;
+    background-color: colors.$article-heading-bg;
+    color: colors.$article-heading-fg;
+    text-align: center;
+    margin: 0;
+    inline-size: 100%;
+    padding: 2rem 1rem;
+    text-shadow: 1px 1px 0 colors.$article-heading-bg, 3px 3px 0 colors.$yellow-500;
+    box-shadow: 0 2px 4px colors.$article-bg-shadow;
+  }
+
+  section {
+    inline-size: 100%;
+    margin: 0 auto;
+    padding: $spacing;
+    background: colors.$article-content-bg;
+    box-shadow: 0 2px 4px colors.$article-bg-shadow;
+
+    @media(min-width: 768px) {
+      inline-size: calc(100% - 4rem);
+      padding: 1lh;
+    }
+
+    >* {
+      margin-block-end: 1lh;
+
+      &:last-child {
+        margin-block-end: 0;
+      }
+    }
+  }
+}

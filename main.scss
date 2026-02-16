@@ -1,0 +1,39 @@
+@use './root';
+@use './colors';
+@use './fonts';
+@use './text';
+@use './inputs';
+@use './button';
+@use './popover';
+@use './header';
+@use './article';
+
+// LAYOUT
+body {
+  background: colors.$body-bg;
+  font-family: fonts.$body;
+  font-size: 16px;
+  line-height: normal;
+  color: colors.$text;
+}
+
+h1 {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-end;
+  block-size: min(12.5vw, calc(var(--header-height) / 2));
+  inline-size: 100%;
+  max-inline-size: calc(800px - 2rem);
+  padding: 0 0 0.5rem 0.5rem;
+  overflow: hidden;
+  border-block-end: double 3px #ddc;
+}
+
+// TODO: POST LAYOUT - PROBABLY NOT NEEDED
+figure {
+  inline-size: 100%;
+}
+
+figure iframe {
+  inline-size: 100%;
+}

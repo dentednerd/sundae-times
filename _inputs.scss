@@ -1,0 +1,137 @@
+@use 'sass:color';
+@use './colors';
+@use './fonts';
+
+label {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  align-items: center;
+  max-inline-size: 100%;
+}
+
+label:has(input),
+label:has(+ input) {
+  background: colors.$label-bg;
+  box-shadow: 0 2px 2px colors.$label-shadow;
+  padding: 0.5lh;
+}
+
+input:not([type=file], [type=range]),
+textarea,
+select,
+datalist {
+  border: 0;
+  color: colors.$input-fg;
+  background-color: colors.$input-bg;
+  padding: 0.5rem 1rem;
+  font-family: fonts.$body;
+  font-size: 1rem;
+  box-sizing: border-box;
+
+  &[type=radio],
+  &[type=checkbox] {
+    accent-color: light-dark(colors.$input-fg, white);
+    border: solid 1px colors.$input-fg;
+    background-color: white;
+  }
+
+  &::placeholder {
+    color: colors.$input-placeholder;
+  }
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=datetime-local],
+textarea,
+input[list] {
+  box-shadow: 0 2px 2px colors.$input-shadow;
+
+  &::placeholder {
+    color: colors.$input-placeholder;
+  }
+
+  &:disabled {
+    box-shadow: none;
+    background-color: color.mix(colors.$input-bg, transparent, $weight: 50%);
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    margin-inline-end: 2px;
+    filter: invert(0.8);
+  }
+}
+
+input[type=color] {
+  all: unset;
+  inline-size: 7.5rem;
+  block-size: 2rem;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+input[type=file] {
+  font-family: fonts.$body;
+}
+
+input[type=file]::file-selector-button {
+  margin-inline-end: 1rem;
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=datetime-local],
+input[list],
+select,
+textarea {
+  inline-size: 20ch;
+}
+
+input[type=file]::file-selector-button {
+  background-color: colors.$button-bg;
+  color: colors.$button-fg;
+  text-shadow: 0 2px 0 colors.$button-bg-shadow;
+  box-shadow: 0 4px 4px colors.$input-shadow;
+  padding: 1rem;
+  border: none;
+  font-family: fonts.$heading;
+  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: normal;
+  block-size: fit-content;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: colors.$button-hover-fg;
+    transform: scale(0.9);
+    transition: all 0.2s ease;
+  }
+
+  &:active {
+    transform: scale(0.8);
+  }
+}
+
+textarea {
+  resize: none;
+}

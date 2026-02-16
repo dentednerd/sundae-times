@@ -1,0 +1,62 @@
+@use 'sass:color';
+@use './colors';
+@use './fonts';
+
+button {
+  background-color: colors.$button-bg;
+  color: colors.$button-fg;
+  text-shadow: 0 2px 0 colors.$button-bg-shadow;
+  box-shadow: 0 4px 4px colors.$input-shadow;
+  padding: 1rem;
+  border: none;
+  font-family: fonts.$heading;
+  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: normal;
+  block-size: fit-content;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: colors.$button-hover-fg;
+    transform: scale(0.9);
+    transition: all 0.2s ease;
+  }
+
+  &:active {
+    transform: scale(0.8);
+  }
+
+  &.success {
+    background-color: colors.$success-bg;
+    text-shadow: 0 2px 0 colors.$success-shadow;
+  }
+
+  &.info {
+    background-color: colors.$info-bg;
+    text-shadow: 0 2px 0 colors.$info-shadow;
+  }
+
+  &.error {
+    background-color: colors.$error-bg;
+    text-shadow: 0 2px 0 colors.$error-shadow;
+  }
+
+  &.warning {
+    background-color: colors.$warning-bg;
+    color: colors.$warning-fg;
+    text-shadow: 0 2px 0 colors.$warning-shadow;
+  }
+
+  &:disabled {
+    background-color: color-mix(in hsl, colors.$button-bg, transparent 50%);
+    color: colors.$button-bg;
+    box-shadow: unset;
+    text-shadow: unset;
+    cursor: auto;
+
+    &:hover {
+      transform: unset;
+    }
+  }
+}

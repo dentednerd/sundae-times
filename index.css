@@ -1,0 +1,617 @@
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto+Slab:wght@100..900&family=Satisfy&display=swap");
+:root {
+  --body-bg: $body-bg;
+  --body-shadow: $body-shadow:;
+  --text: $text;
+  --article-bg: $article-bg;
+  --article-bg-shadow: $article-bg-shadow;
+  --article-heading-fg: $article-heading-fg;
+  --article-heading-bg: $article-heading-bg;
+  --article-heading-fg-shadow: $article-heading-fg-shadow;
+  --article-content-bg: $article-content-bg;
+  --article-content-shadow: $article-content-shadow;
+  --heading-1: $heading-1;
+  --heading-1-shadow: $heading-1-shadow;
+  --heading-shadow: $heading-shadow;
+  --heading-6: $heading-6;
+  --link-fg: $link-fg;
+  --link-bg: $link-bg;
+  --blockquote-bg: $blockquote-bg;
+  --blockquote-border: $blockquote-border;
+  --blockquote-fg: $blockquote-fg;
+  --blockquote-link-fg: $blockquote-link-fg;
+  --blockquote-link-bg: $blockquote-link-bg;
+  --list-border: $list-border;
+  --pre-bg: $pre-bg;
+  --pre-border: $pre-border;
+  --label-bg: $label-bg;
+  --label-shadow: $label-shadow;
+  --input-bg: $input-bg;
+  --input-bg-shadow: $input-bg-shadow;
+  --input-shadow: $input-shadow;
+  --input-fg: $input-fg;
+  --input-placeholder: $input-placeholder;
+  --button-bg: $button-bg;
+  --button-bg-shadow: $button-bg-shadow;
+  --button-fg: $button-fg;
+  --button-hover-fg: $button-hover-fg;
+  --success-bg: $success-bg;
+  --success-shadow: $success-shadow;
+  --info-bg: $info-bg;
+  --info-shadow: $info-shadow;
+  --error-bg: $error-bg;
+  --error-shadow: $error-shadow;
+  --warning-bg: $warning-bg;
+  --warning-shadow: $warning-shadow;
+  --warning-fg: $warning-fg;
+  --popover-backdrop: $popover-backdrop;
+  --popover-shadow: $popover-shadow;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  border: 0;
+}
+
+p {
+  margin-block-end: 1rem;
+}
+p:last-child {
+  margin-block-end: 0;
+}
+
+h1 {
+  font-family: "Satisfy", cursive;
+  color: hsl(180, 25%, 70%);
+  text-shadow: 1px 1px 0 hsl(50, 100%, 95%), 3px 3px 0 hsl(0, 14%, 90%);
+}
+
+h2 {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 2rem;
+  letter-spacing: -2px;
+  text-shadow: 1px 1px 0 hsl(50, 100%, 95%), 2px 2px 0 hsl(0, 14%, 80%);
+}
+h2:first-letter {
+  font-family: "Satisfy", cursive;
+  font-size: 3rem;
+  line-height: 1lh;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: "Fjalla One", sans-serif;
+  font-weight: normal;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 hsl(50, 100%, 95%), 2px 2px 1px hsl(0, 14%, 80%);
+}
+
+h4 {
+  font-family: "Satisfy", cursive;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 0 hsl(50, 100%, 95%), 2px 2px 1px hsl(0, 14%, 80%);
+}
+
+h5 {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 1rem;
+}
+
+h6 {
+  font-family: "Satisfy", cursive;
+  font-size: 1rem;
+  color: hsl(0, 14%, 70%);
+}
+
+a {
+  text-decoration: none;
+  color: hsl(0, 80%, 70%);
+  background-image: linear-gradient(hsl(0, 80%, 80%));
+  background-size: 200% 0.25rem;
+  background-position: 200% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s, background-position 0.3s 0.3s;
+}
+a:hover {
+  color: hsl(50, 100%, 90%);
+  transition: background-size 0.3s 0.3s, background-position 0.3s, color 0.3s 0.3s;
+  background-size: 200% 100%;
+  background-position: 100% 100%;
+}
+
+blockquote {
+  background: hsl(0, 80%, 80%);
+  border-inline-start: solid 0.5lh hsl(0, 80%, 70%);
+  padding: 0.5lh;
+  color: hsl(0, 14%, 30%);
+}
+blockquote p {
+  margin-block-end: 1rem;
+}
+blockquote p:last-child {
+  margin-block-end: 0;
+}
+blockquote a {
+  color: hsl(0, 80%, 40%);
+  background-image: linear-gradient(hsl(50, 100%, 90%));
+}
+blockquote a:hover {
+  color: hsl(0, 80%, 70%);
+}
+blockquote img {
+  inline-size: 95%;
+}
+
+ul,
+ol {
+  margin: 2rem 0;
+  padding-inline: 1.5lh;
+  border-inline-start: solid 0.5lh hsl(0, 14%, 60%);
+}
+
+pre {
+  background: hsl(50, 100%, 80%);
+  border-inline-start: solid 0.5lh hsl(50, 100%, 60%);
+  padding: 0.5lh;
+}
+
+label {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  align-items: center;
+  max-inline-size: 100%;
+}
+
+label:has(input),
+label:has(+ input) {
+  background: hsl(50, 100%, 80%);
+  box-shadow: 0 2px 2px hsl(0, 14%, 70%);
+  padding: 0.5lh;
+}
+
+input:not([type=file], [type=range]),
+textarea,
+select,
+datalist {
+  border: 0;
+  color: hsl(180, 25%, 30%);
+  background-color: hsl(180, 25%, 90%);
+  padding: 0.5rem 1rem;
+  font-family: "Roboto Slab", serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+input:not([type=file], [type=range])[type=radio], input:not([type=file], [type=range])[type=checkbox],
+textarea[type=radio],
+textarea[type=checkbox],
+select[type=radio],
+select[type=checkbox],
+datalist[type=radio],
+datalist[type=checkbox] {
+  accent-color: light-dark(hsl(180, 25%, 30%), white);
+  border: solid 1px hsl(180, 25%, 30%);
+  background-color: white;
+}
+input:not([type=file], [type=range])::placeholder,
+textarea::placeholder,
+select::placeholder,
+datalist::placeholder {
+  color: hsl(180, 25%, 60%);
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=datetime-local],
+textarea,
+input[list] {
+  box-shadow: 0 2px 2px hsl(0, 14%, 70%);
+}
+input[type=text]::placeholder,
+input[type=email]::placeholder,
+input[type=password]::placeholder,
+input[type=date]::placeholder,
+input[type=datetime-local]::placeholder,
+textarea::placeholder,
+input[list]::placeholder {
+  color: hsl(180, 25%, 60%);
+}
+input[type=text]:disabled,
+input[type=email]:disabled,
+input[type=password]:disabled,
+input[type=date]:disabled,
+input[type=datetime-local]:disabled,
+textarea:disabled,
+input[list]:disabled {
+  box-shadow: none;
+  background-color: rgba(223.125, 235.875, 235.875, 0.5);
+}
+input[type=text]::-webkit-calendar-picker-indicator,
+input[type=email]::-webkit-calendar-picker-indicator,
+input[type=password]::-webkit-calendar-picker-indicator,
+input[type=date]::-webkit-calendar-picker-indicator,
+input[type=datetime-local]::-webkit-calendar-picker-indicator,
+textarea::-webkit-calendar-picker-indicator,
+input[list]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-inline-end: 2px;
+  filter: invert(0.8);
+}
+
+input[type=color] {
+  all: unset;
+  inline-size: 7.5rem;
+  block-size: 2rem;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+input[type=file] {
+  font-family: "Roboto Slab", serif;
+}
+
+input[type=file]::file-selector-button {
+  margin-inline-end: 1rem;
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=datetime-local],
+input[list],
+select,
+textarea {
+  inline-size: 20ch;
+}
+
+input[type=file]::file-selector-button {
+  background-color: hsl(180, 25%, 40%);
+  color: hsl(50, 100%, 90%);
+  text-shadow: 0 2px 0 hsl(180, 25%, 20%);
+  box-shadow: 0 4px 4px hsl(0, 14%, 70%);
+  padding: 1rem;
+  border: none;
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: normal;
+  block-size: fit-content;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+input[type=file]::file-selector-button:hover {
+  color: hsl(50, 100%, 70%);
+  transform: scale(0.9);
+  transition: all 0.2s ease;
+}
+input[type=file]::file-selector-button:active {
+  transform: scale(0.8);
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  background-color: hsl(180, 25%, 40%);
+  color: hsl(50, 100%, 90%);
+  text-shadow: 0 2px 0 hsl(180, 25%, 20%);
+  box-shadow: 0 4px 4px hsl(0, 14%, 70%);
+  padding: 1rem;
+  border: none;
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: normal;
+  block-size: fit-content;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+button:hover {
+  color: hsl(50, 100%, 70%);
+  transform: scale(0.9);
+  transition: all 0.2s ease;
+}
+button:active {
+  transform: scale(0.8);
+}
+button.success {
+  background-color: hsl(140, 25%, 60%);
+  text-shadow: 0 2px 0 hsl(140, 25%, 40%);
+}
+button.info {
+  background-color: hsl(180, 25%, 60%);
+  text-shadow: 0 2px 0 hsl(180, 25%, 40%);
+}
+button.error {
+  background-color: hsl(0, 80%, 70%);
+  text-shadow: 0 2px 0 hsl(0, 80%, 60%);
+}
+button.warning {
+  background-color: hsl(50, 100%, 70%);
+  color: hsl(0, 14%, 40%);
+  text-shadow: 0 2px 0 hsl(50, 100%, 50%);
+}
+button:disabled {
+  background-color: color-mix(in hsl, hsl(180, 25%, 40%), transparent 50%);
+  color: hsl(180, 25%, 40%);
+  box-shadow: unset;
+  text-shadow: unset;
+  cursor: auto;
+}
+button:disabled:hover {
+  transform: unset;
+}
+
+[popover] {
+  position: relative;
+}
+[popover]:popover-open {
+  inline-size: calc(100vw - 2rem);
+  block-size: fit-content;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  inset: unset;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  border: none;
+  overflow: auto;
+  box-shadow: 0 0 1rem hsl(180, 25%, 30%);
+}
+@media (min-width: calc(768px + 2rem)) {
+  [popover]:popover-open {
+    inline-size: 768px;
+  }
+}
+[popover]:popover-open button.close-button {
+  position: fixed;
+  inset-inline-end: 0.5rem;
+  inset-block-start: 0.5rem;
+  block-size: 2lh;
+  inline-size: 2lh;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 4px hsl(180, 25%, 30%);
+}
+[popover]::backdrop {
+  background: color-mix(in hsl, hsl(180, 25%, 30%), transparent 50%);
+  backdrop-filter: blur(3px);
+  pointer-events: none;
+}
+
+:root {
+  --header-height: 200px;
+}
+
+header {
+  display: flex;
+  flex-flow: column wrap;
+  container-type: inline-size;
+  padding-block-end: 1rem;
+}
+@media (min-width: 768px) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr fit-content(100cqb);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 2px;
+    background: hsl(0, 14%, 70%);
+    padding: 0;
+  }
+}
+header h1, header p, header nav {
+  background-color: hsl(50, 100%, 95%);
+}
+header h1 {
+  display: inline;
+  min-block-size: 1lh;
+  block-size: auto;
+  font-size: clamp(2rem, 12cqi + 0.5rem, 4rem);
+  padding: 0;
+  padding-inline-start: 0.25rem;
+  border-block-end: solid 2px hsl(0, 14%, 70%);
+  margin-block-end: 1rem;
+}
+@media (min-width: 768px) {
+  header h1 {
+    display: block;
+    inline-size: 100%;
+    font-size: 4rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 0;
+    margin: 0;
+  }
+}
+header p {
+  margin-block-start: 1rem;
+  padding-block: 1rem;
+  color: hsl(0, 80%, 70%);
+  text-shadow: 1px 1px 0 #eed;
+  border-block: solid 2px hsl(0, 14%, 70%);
+}
+@media (min-width: 768px) {
+  header p {
+    margin: 0;
+    border: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  nav {
+    position: relative;
+    grid-column: 2/3;
+    grid-row: 1/3;
+    display: grid;
+    place-items: center;
+    margin: 0;
+  }
+}
+nav section {
+  background: hsl(0, 80%, 80%);
+  border-inline-start: solid 0.5lh hsl(0, 80%, 70%);
+  padding-block: 0.5rem;
+  block-size: 100%;
+}
+@media (min-width: 768px) {
+  nav section {
+    border-radius: 50%;
+    border: 0;
+    block-size: 100%;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    margin: 0;
+  }
+}
+nav section ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  block-size: fit-content;
+  text-align: center;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+@media (min-width: 768px) {
+  nav section ul {
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 0.25lh;
+  }
+}
+nav section ul li {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 1rem;
+  color: hsl(50, 100%, 90%);
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-shadow: 0 0.05lh 0 hsl(0, 80%, 80%), 0 0.1lh 0 hsl(0, 80%, 70%);
+}
+@media (min-width: 768px) {
+  nav section ul li {
+    font-size: 1.25rem;
+  }
+}
+nav section ul li a {
+  color: hsl(50, 100%, 90%);
+  background-image: none;
+  transition: color 0s 0s;
+}
+nav section ul li a:hover {
+  color: hsl(50, 100%, 70%);
+  transition: color 0s 0s;
+}
+
+article {
+  background: hsl(180, 25%, 70%);
+  max-inline-size: 100%;
+  margin: 4rem auto;
+  padding: clamp(0.5rem, 2vw + 0.25rem, 2rem);
+  block-size: auto;
+  box-shadow: 0 4px 4px hsl(0, 14%, 60%);
+}
+@media (min-width: 768px) {
+  article {
+    padding: 2rem;
+  }
+}
+article:first-of-type {
+  margin-block-start: 2rem;
+}
+article h2 {
+  display: block;
+  background-color: hsl(50, 100%, 80%);
+  color: hsl(0, 14%, 50%);
+  text-align: center;
+  margin: 0;
+  inline-size: 100%;
+  padding: 2rem 1rem;
+  text-shadow: 1px 1px 0 hsl(50, 100%, 80%), 3px 3px 0 hsl(50, 100%, 50%);
+  box-shadow: 0 2px 4px hsl(180, 25%, 50%);
+}
+article section {
+  inline-size: 100%;
+  margin: 0 auto;
+  padding: clamp(0.5rem, 2vw + 0.25rem, 2rem);
+  background: hsl(50, 100%, 90%);
+  box-shadow: 0 2px 4px hsl(180, 25%, 50%);
+}
+@media (min-width: 768px) {
+  article section {
+    inline-size: calc(100% - 4rem);
+    padding: 1lh;
+  }
+}
+article section > * {
+  margin-block-end: 1lh;
+}
+article section > *:last-child {
+  margin-block-end: 0;
+}
+
+body {
+  background: hsl(50, 100%, 95%);
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  line-height: normal;
+  color: hsl(0, 14%, 50%);
+}
+
+h1 {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-end;
+  block-size: min(12.5vw, var(--header-height) / 2);
+  inline-size: 100%;
+  max-inline-size: calc(800px - 2rem);
+  padding: 0 0 0.5rem 0.5rem;
+  overflow: hidden;
+  border-block-end: double 3px #ddc;
+}
+
+figure {
+  inline-size: 100%;
+}
+
+figure iframe {
+  inline-size: 100%;
+}
+
+/*# sourceMappingURL=index.css.map */

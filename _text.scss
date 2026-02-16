@@ -1,0 +1,114 @@
+@use './colors';
+@use './fonts';
+
+p {
+  margin-block-end: 1rem;
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+}
+
+h1 {
+  font-family: fonts.$cursive;
+  color: colors.$heading-1;
+  text-shadow: 1px 1px 0 colors.$body-bg, 3px 3px 0 colors.$heading-1-shadow;
+}
+
+h2 {
+  font-family: fonts.$heading;
+  font-size: 2rem;
+  letter-spacing: -2px;
+  text-shadow: 1px 1px 0 colors.$body-bg, 2px 2px 0 colors.$heading-shadow;
+
+  &:first-letter {
+    font-family: fonts.$cursive;
+    font-size: 3rem;
+    line-height: 1lh;
+    text-transform: uppercase;
+  }
+}
+
+h3 {
+  font-family: fonts.$heading;
+  font-weight: normal;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 colors.$body-bg, 2px 2px 1px colors.$heading-shadow;
+}
+
+h4 {
+  font-family: fonts.$cursive;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 0 colors.$body-bg, 2px 2px 1px colors.$heading-shadow;
+}
+
+h5 {
+  font-family: fonts.$heading;
+  font-size: 1rem;
+}
+
+h6 {
+  font-family: fonts.$cursive;
+  font-size: 1rem;
+  color: colors.$heading-6;
+}
+
+a {
+  text-decoration: none;
+  color: colors.$link-fg;
+  background-image: linear-gradient(colors.$link-bg);
+  background-size: 200% 0.25rem;
+  background-position: 200% 100%;
+  background-repeat: no-repeat;
+  transition: background-size .3s, background-position .3s .3s;
+
+  &:hover {
+    color: colors.$article-content-bg;
+    transition: background-size .3s .3s, background-position .3s, color .3s .3s;
+    background-size: 200% 100%;
+    background-position: 100% 100%;
+  }
+}
+
+blockquote {
+  background: colors.$blockquote-bg;
+  border-inline-start: solid 0.5lh colors.$blockquote-border;
+  padding: 0.5lh;
+  color: colors.$blockquote-fg;
+
+  p {
+    margin-block-end: 1rem;
+
+    &:last-child {
+      margin-block-end: 0;
+    }
+  }
+
+  a {
+    color: colors.$blockquote-link-fg;
+    background-image: linear-gradient(colors.$blockquote-link-bg);
+
+    &:hover {
+      color: colors.$blockquote-border;
+    }
+  }
+
+  img {
+    inline-size: 95%;
+  }
+}
+
+ul,
+ol {
+  margin: 2rem 0;
+  padding-inline: 1.5lh;
+  border-inline-start: solid 0.5lh colors.$list-border;
+}
+
+pre {
+  background: colors.$pre-bg;
+  border-inline-start: solid 0.5lh colors.$pre-border;
+  padding: 0.5lh;
+}
