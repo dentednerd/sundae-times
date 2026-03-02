@@ -335,26 +335,30 @@ button {
 button:hover {
   color: hsl(50, 100%, 70%);
   transform: scale(0.9);
+  box-shadow: 0 2px 2px hsl(0, 14%, 70%);
   transition: all 0.2s ease;
 }
 button:active {
   transform: scale(0.8);
 }
-button.success {
-  background-color: hsl(140, 25%, 60%);
-  text-shadow: 0 2px 0 hsl(140, 25%, 40%);
+button[data-variant=success] {
+  background-color: hsl(140, 25%, 70%);
+  color: hsl(140, 25%, 20%);
+  text-shadow: 0 2px 0 hsl(140, 25%, 60%);
 }
-button.info {
-  background-color: hsl(180, 25%, 60%);
-  text-shadow: 0 2px 0 hsl(180, 25%, 40%);
+button[data-variant=info] {
+  background-color: hsl(180, 25%, 70%);
+  color: hsl(180, 25%, 20%);
+  text-shadow: 0 2px 0 hsl(180, 25%, 60%);
 }
-button.error {
+button[data-variant=error] {
   background-color: hsl(0, 80%, 70%);
+  color: hsl(0, 80%, 20%);
   text-shadow: 0 2px 0 hsl(0, 80%, 60%);
 }
-button.warning {
+button[data-variant=warning] {
   background-color: hsl(50, 100%, 70%);
-  color: hsl(0, 14%, 40%);
+  color: hsl(50, 100%, 20%);
   text-shadow: 0 2px 0 hsl(50, 100%, 50%);
 }
 button:disabled {

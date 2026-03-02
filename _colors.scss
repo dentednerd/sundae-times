@@ -102,18 +102,21 @@ $button-bg-shadow: $blue-200;
 $button-fg: $yellow-900;
 $button-hover-fg: $yellow-700;
 
-$success-bg: $green-600;
-$success-shadow: $green-400;
+$success-bg: $green-700;
+$success-shadow: $green-600;
+$success-fg: $green-200;
 
-$info-bg: $blue-600;
-$info-shadow: $blue-400;
+$info-bg: $blue-700;
+$info-shadow: $blue-600;
+$info-fg: $blue-200;
 
 $error-bg: $red-700;
 $error-shadow: $red-600;
+$error-fg: $red-200;
 
 $warning-bg: $yellow-700;
 $warning-shadow: $yellow-500;
-$warning-fg: $brown-400;
+$warning-fg: $yellow-200;
 
 $popover-backdrop: color-mix(in hsl, $blue-300, transparent 50%);
 $popover-shadow: $blue-300;

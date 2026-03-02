@@ -20,6 +20,7 @@ button {
   &:hover {
     color: colors.$button-hover-fg;
     transform: scale(0.9);
+    box-shadow: 0 2px 2px colors.$input-shadow;
     transition: all 0.2s ease;
   }
 
@@ -27,22 +28,25 @@ button {
     transform: scale(0.8);
   }
 
-  &.success {
+  &[data-variant=success] {
     background-color: colors.$success-bg;
+    color: colors.$success-fg;
     text-shadow: 0 2px 0 colors.$success-shadow;
   }
 
-  &.info {
+  &[data-variant=info] {
     background-color: colors.$info-bg;
+    color: colors.$info-fg;
     text-shadow: 0 2px 0 colors.$info-shadow;
   }
 
-  &.error {
+  &[data-variant=error] {
     background-color: colors.$error-bg;
+    color: colors.$error-fg;
     text-shadow: 0 2px 0 colors.$error-shadow;
   }
 
-  &.warning {
+  &[data-variant=warning] {
     background-color: colors.$warning-bg;
     color: colors.$warning-fg;
     text-shadow: 0 2px 0 colors.$warning-shadow;
