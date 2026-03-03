@@ -15,94 +15,193 @@
       <nav>
         <section>
           <ul>
-            <li><a href="#article">article</a></li>
+            <li><a href="#text">text</a></li>
             <li><a href="#inputs">inputs</a></li>
+            <li><a href="#elements">elements</a></li>
+            <li><a href="#article">article</a></li>
           </ul>
         </section>
       </nav>
-      <p>A sweet-toothed lightweight design system with retro summer vibes.</p>
+      <p>A sweet-toothed lightweight theme with retro summer vibes.</p>
     </header>
 
-    <article id="article">
-      <h2>I'm an article h2.</h2>
-      <section class="body">
-        <p>I'm an article section paragraph, <a href="#">with a link</a>.</p>
-        <h3>Heading 3</h3>
-        <h4>Heading 4</h4>
-        <h5>Heading 5</h5>
-        <h6>Heading 6</h6>
-        <blockquote>
-          I'm an article blockquote, <a href="#">with a link.</a>
-        </blockquote>
-        <p><code>I'm code, inline inside a paragraph.</code></p>
-        <pre>I'm preformatted text.</pre>
-        <ul>
-          <li>one</li>
-          <li>two</li>
-          <li>three</li>
-        </ul>
-        <ol>
-          <li>one</li>
-          <li>two</li>
-          <li>three</li>
-        </ol>
-      </section>
-    </article>
+    <details id="intro" name="intro">
+      <summary>What's this then?</summary>
+      <p>Sundae Times used to be a Tumblr theme, back when I made that sort of thing. Now it's a stylesheet. It's not a design system in the truest sense; it's just a set of styles for pure HTML elements, with a few utility classes and variants for good measure.</p>
+      <p>Come to think of it, it's probably still useful as a Tumblr theme.</p>
+    </details>
+    <details name="intro">
+      <summary>Can I use it?</summary>
+      <p>There's nothing stopping you. But it's still a work in progress, which means anything could change drastically at any time. It's not been accessibility tested yet (I don't expect it to pass colour contrast tests) so it's not good for professional use. But that's not the point of this project - it's just for fun.</p>
+    </details>
 
-    <article id="inputs">
-      <h2>Inputs</h2>
-      <section class="inputs">
+    <hr />
+
+    <h2 id="text">Text</h2>
+
+    <p>I'm a paragraph, <a href="#">with a link</a>, and <code>a little code</code>. See there, told you that would be easy. Use absolutely no pressure. Just like an angel's wing. If we're going to have
+    animals around we all have to be concerned about them and take care of them. You can create the world you want to see
+    and be a part of. You have that power.</p>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <blockquote>
+      I'm a paragraph inside a blockquote, <a href="#">with a link</a>, and <code>a little code</code>. See there, told you that would be easy. Use absolutely no pressure. Just like an angel's wing. If we're going to have
+      animals around we all have to be concerned about them and take care of them. You can create the world you want to see
+      and be a part of. You have that power.</a>
+    </blockquote>
+    <pre>I'm preformatted text.</pre>
+    <ul>
+      <li>Unordered list item one</li>
+      <li>Unordered list item two</li>
+      <li>Unordered list item three</li>
+    </ul>
+    <ol>
+      <li>Ordered list item one</li>
+      <li>Ordered list item two</li>
+      <li>Ordered list item three</li>
+    </ol>
+
+    <hr />
+
+    <h2 id="inputs">Inputs</h2>
+    <section class="inputs">
+      <label>
+        disabled
         <input type="text" placeholder="disabled" disabled />
+      </label>
+      <label>
+        text
         <input type="text" placeholder="text" />
-        <label>
-          <input type="color" placeholder="color" value="#aacccc" /> color
-        </label>
+      </label>
+      <label>
+        color
+        <input type="color" placeholder="color" value="#aacccc" />
+      </label>
+      <label>
+        date
         <input type="date" />
+      </label>
+      <label>
+        datetime
         <input type="datetime-local" />
+      </label>
+      <label>
+        textarea
         <textarea rows="4" placeholder="textarea"></textarea>
+      </label>
+      <fieldset role="radiogroup">
+        <legend>Radio buttons</legend>
         <label>
-          <input type="radio" name="radiobuttons" value="radio" /> radio
+          <input type="radio" name="radiobuttons" value="hay" /> hay
         </label>
         <label>
-          <input type="checkbox" name="checkboxes" value="radio" /> checkbox
+          <input type="radio" name="radiobuttons" value="bee" /> bee
         </label>
         <label>
-          <select name="pets" id="select-how-good">
-            <option value="good">good</option>
-            <option value="better">better</option>
-            <option value="best">best</option>
-          </select>
-          select
+          <input type="radio" name="radiobuttons" value="sea" /> sea
         </label>
+        <label>
+          <input type="radio" name="radiobuttons" value="dee" disabled /> dee
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Checkboxes</legend>
+        <label>
+          <input type="checkbox" name="checkboxes" value="do" /> do
+        </label>
+        <label>
+          <input type="checkbox" name="checkboxes" value="re" /> re
+        </label>
+        <label>
+          <input type="checkbox" name="checkboxes" value="mi" /> mi
+        </label>
+        <label>
+          <input type="checkbox" name="checkboxes" value="fa" disabled /> fa
+        </label>
+      </fieldset>
+      <label>
+        switch
+        <input type="checkbox" role="switch" />
+      </label>
+      <label>
+        select
+        <select name="pets" id="select-how-good">
+          <option value="good">good</option>
+          <option value="better">better</option>
+          <option value="best">best</option>
+        </select>
+      </label>
+      <label>
+        datalist
         <input list="datalist-how-good" placeholder="input list">
         <datalist id="datalist-how-good">
           <option value="good">
           <option value="better">
           <option value="best">
         </datalist>
+      </label>
+      <label>
+        file
         <input type="file" placeholder="file" />
+      </label>
+      <label>
+        range
         <input type="range" min="0" max="100" step="5" value="75" />
-        <div class="buttons">
-          <button type="button" popovertarget="popover">
-            button
-          </button>
-          <button type="button" data-variant="success" popovertarget="popover">
-            .success
-          </button>
-          <button type="button" data-variant="info" popovertarget="popover">
-            .info
-          </button>
-          <button type="button" data-variant="error" popovertarget="popover">
-            .error
-          </button>
-          <button type="button" data-variant="warning" popovertarget="popover">
-            .warning
-          </button>
-          <button type="button" disabled>
-            disabled
-          </button>
-        </div>
-        <progress max="100" value="70" />
+      </label>
+      <div class="buttons">
+        <button type="button" popovertarget="popover">
+          button
+        </button>
+        <button type="button" data-variant="success" popovertarget="popover">
+          success
+        </button>
+        <button type="button" data-variant="info" popovertarget="popover">
+          info
+        </button>
+        <button type="button" data-variant="error" popovertarget="popover">
+          error
+        </button>
+        <button type="button" data-variant="warning" popovertarget="popover">
+          warning
+        </button>
+        <button type="button" data-variant="outline" popovertarget="popover">
+        outline
+        </button>
+        <button type="button" data-variant="ghost" popovertarget="popover">
+          ghost
+        </button>
+        <button type="button" disabled>
+          disabled
+        </button>
+      </div>
+      <progress max="100" value="70" />
+    </section>
+
+    <hr />
+
+    <h2 id="elements">Elements</h2>
+    <details>
+      <summary>details</summary>
+      <p>This is a disclosure element, powered by <code>details</code> and <code>summary</code>.</p>
+    </details>
+    <span class="badge">badge</span>
+    <span class="badge" data-variant="success">success</span>
+    <span class="badge" data-variant="info">info</span>
+    <span class="badge" data-variant="error">error</span>
+    <span class="badge" data-variant="warning">warning</span>
+    <span class="badge" data-variant="outline">outline</span>
+    <span class="badge" data-variant="ghost">ghost</span>
+
+    <hr />
+
+    <article id="article">
+      <h2>Article</h2>
+      <section>
+        <p>I'm an article, with an <code>h2</code> and a <code>section</code> for content.</p>
       </section>
     </article>
   </main>

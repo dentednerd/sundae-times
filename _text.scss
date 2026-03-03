@@ -1,5 +1,7 @@
+@use "sass:color";
 @use './colors';
 @use './fonts';
+@use './sizes';
 
 p {
   margin-block-end: 1rem;
@@ -11,20 +13,23 @@ p {
 
 h1 {
   font-family: fonts.$cursive;
+  font-size: sizes.$size-7;
+  line-height: sizes.$size-7;
   color: colors.$heading-1;
-  text-shadow: 1px 1px 0 colors.$body-bg, 3px 3px 0 colors.$heading-1-shadow;
+  text-shadow: sizes.$size-1 sizes.$size-1 0 colors.$body-bg, sizes.$size-2 sizes.$size-2 0 colors.$heading-1-shadow;
 }
 
 h2 {
   font-family: fonts.$heading;
-  font-size: 2rem;
+  font-size: sizes.$size-6;
+  line-height: sizes.$size-6;
   letter-spacing: -2px;
-  text-shadow: 1px 1px 0 colors.$body-bg, 2px 2px 0 colors.$heading-shadow;
+  text-shadow: 1px 1px 0 colors.$body-bg, sizes.$size-1 sizes.$size-1 0 colors.$heading-shadow;
 
   &:first-letter {
     font-family: fonts.$cursive;
-    font-size: 3rem;
-    line-height: 1lh;
+    font-size: sizes.$size-7;
+    line-height: sizes.$size-7;
     text-transform: uppercase;
   }
 }
@@ -32,27 +37,42 @@ h2 {
 h3 {
   font-family: fonts.$heading;
   font-weight: normal;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
+  font-size: sizes.$size-5;
+  line-height: sizes.$size-5;
+  letter-spacing: sizes.$size-1;
   text-transform: uppercase;
-  text-shadow: 1px 1px 0 colors.$body-bg, 2px 2px 1px colors.$heading-shadow;
+  text-shadow: 1px 1px 0 colors.$body-bg, sizes.$size-1 sizes.$size-1 0 colors.$heading-shadow;
 }
 
 h4 {
   font-family: fonts.$cursive;
-  font-size: 1.5rem;
-  text-shadow: 1px 1px 0 colors.$body-bg, 2px 2px 1px colors.$heading-shadow;
+  font-size: sizes.$size-5;
+  line-height: sizes.$size-5;
+  text-shadow: 1px 1px 0 colors.$body-bg, sizes.$size-1 sizes.$size-1 0 colors.$heading-shadow;
 }
 
 h5 {
   font-family: fonts.$heading;
-  font-size: 1rem;
+  font-size: sizes.$size-4;
+  line-height: sizes.$size-5;
+  letter-spacing: -0.5px;
 }
 
 h6 {
-  font-family: fonts.$cursive;
-  font-size: 1rem;
+  font-family: fonts.$heading;
+  font-size: sizes.$size-4;
+  line-height: sizes.$size-5;
+  letter-spacing: -0.5px;
   color: colors.$heading-6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block-end: sizes.$size-5;
 }
 
 a {
@@ -70,6 +90,13 @@ a {
     background-size: 200% 100%;
     background-position: 100% 100%;
   }
+
+  @starting-style {
+    &:hover {
+      background-size: 200% 0.25rem;
+      background-position: 200% 100%;
+    }
+  }
 }
 
 blockquote {
@@ -77,6 +104,7 @@ blockquote {
   border-inline-start: solid 0.5lh colors.$blockquote-border;
   padding: 0.5lh;
   color: colors.$blockquote-fg;
+  margin-block-end: 1lh;
 
   p {
     margin-block-end: 1rem;
@@ -111,4 +139,14 @@ pre {
   background: colors.$pre-bg;
   border-inline-start: solid 0.5lh colors.$pre-border;
   padding: 0.5lh;
+  overflow: hidden;
+}
+
+code {
+  background-color: color-mix(in hsl, colors.$blockquote-bg 20%, transparent 80%);
+  border-radius: 0.2rem;
+}
+
+blockquote code {
+    background-color: color-mix(in hsl, colors.$body-bg 30%, transparent 70%);
 }

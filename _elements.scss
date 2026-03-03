@@ -1,0 +1,72 @@
+@use './colors';
+@use './fonts';
+@use './sizes';
+
+hr {
+  margin-block: sizes.$size-5;
+  border: none;
+  border-top: solid sizes.$size-1 colors.$brown-700;
+}
+
+details {
+  background-color: colors.$label-bg;
+  padding: sizes.$size-5;
+  box-shadow: 0 2px 2px colors.$label-shadow;
+  cursor: pointer;
+  margin-block-end: 0;
+
+  &:has(+*:not(details)) {
+    margin-block-end: sizes.$size-5;
+  }
+
+  &:open {
+    summary {
+      margin-block-end: sizes.$size-5;
+    }
+  }
+
+  summary {
+    font-weight: 700;
+  }
+}
+
+span.badge {
+  display: inline-block;
+  font-family: fonts.$heading;
+  font-size: sizes.$size-4;
+  line-height: sizes.$size-4;
+  text-transform: uppercase;
+  padding: sizes.$size-2 sizes.$size-3;
+  background-color: colors.$button-bg;
+  color: colors.$button-fg;
+  cursor: default;
+  box-sizing: border-box;
+
+  &[data-variant=success] {
+    background-color: colors.$success-bg;
+  }
+
+  &[data-variant=info] {
+    background-color: colors.$info-bg;
+  }
+
+  &[data-variant=error] {
+    background-color: colors.$error-bg;
+  }
+
+  &[data-variant=warning] {
+    background-color: colors.$warning-bg;
+    color: colors.$warning-fg;
+  }
+
+  &[data-variant=outline] {
+    background-color: transparent;
+    color: colors.$text;
+    border: solid sizes.$size-1 colors.$text;
+  }
+
+  &[data-variant=ghost] {
+    background-color: transparent;
+    color: colors.$text;
+  }
+}

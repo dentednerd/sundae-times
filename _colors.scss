@@ -72,7 +72,7 @@ $article-content-shadow: $yellow-600; // TODO: needed?
 $heading-1: $blue-700;
 $heading-1-shadow: $brown-900;
 $heading-shadow: $brown-800;
-$heading-6: $brown-700;
+$heading-6: $brown-600;
 
 $link-fg: $red-700;
 $link-bg: $red-800;
@@ -110,13 +110,13 @@ $info-bg: $blue-700;
 $info-shadow: $blue-600;
 $info-fg: $blue-200;
 
-$error-bg: $red-700;
-$error-shadow: $red-600;
+$error-bg: $red-800;
+$error-shadow: $red-700;
 $error-fg: $red-200;
 
 $warning-bg: $yellow-700;
 $warning-shadow: $yellow-500;
 $warning-fg: $yellow-200;
 
-$popover-backdrop: color-mix(in hsl, $blue-300, transparent 50%);
-$popover-shadow: $blue-300;
+$popover-backdrop: color-mix(in hsl, $brown-400, transparent 50%);
+$popover-shadow: $brown-400;

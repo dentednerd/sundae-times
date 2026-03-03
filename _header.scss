@@ -1,15 +1,13 @@
 @use './colors';
 @use './fonts';
-
-:root {
-  --header-height: 200px;
-}
+@use './sizes';
 
 header {
   display: flex;
   flex-flow: column wrap;
   container-type: inline-size;
-  padding-block-end: 1rem;
+  padding-block-end: sizes.$size-4;
+  margin-block-end: sizes.$size-5;
 
   @media(min-width: 768px) {
     display: grid;
@@ -18,6 +16,7 @@ header {
     row-gap: 2px;
     background: colors.$brown-700;
     padding: 0;
+    block-size: calc(sizes.$size-8 * 2);
   }
 
   h1, p, nav {
@@ -25,31 +24,35 @@ header {
   }
 
   h1 {
+    // align-self: end;
     display: inline;
     min-block-size: 1lh;
-    block-size: auto;
-    font-size: clamp(2rem, calc(12cqi + 0.5rem), 4rem);
+    font-size: clamp(sizes.$size-6, calc(12cqi + 0.5rem), sizes.$size-7);
     padding: 0;
     padding-inline-start: 0.25rem;
+    padding-block-end: sizes.$size-4;
     border-block-end: solid 2px colors.$brown-700;
-    margin-block-end: 1rem;
+    margin-block-end: sizes.$size-4;
+    line-height: clamp(sizes.$size-6, calc(12cqi + 0.5rem), sizes.$size-7);
 
     @media(min-width: 768px) {
-      display: block;
+      display: flex;
+      align-items: flex-end;
       inline-size: 100%;
-      font-size: 4rem;
+      block-size: 100%;
+      font-size: sizes.$size-7;
       white-space: nowrap;
       text-overflow: ellipsis;
       border: 0;
-      margin: 0;
+      margin-block-end: 0;
     }
   }
 
   p {
-    margin-block-start: 1rem;
-    padding-block: 1rem;
+    margin-block-start: sizes.$size-4;
+    padding-block: sizes.$size-4;
     color: colors.$red-700;
-    text-shadow: 1px 1px 0 #eed;
+    text-shadow: sizes.$size-1 sizes.$size-1 0 #eed;
     border-block: solid 2px colors.$brown-700;
 
     @media(min-width: 768px) {
@@ -105,7 +108,7 @@ nav {
 
       li {
         font-family: fonts.$heading;
-        font-size: 1rem;
+        font-size: sizes.$size-4;
         color: colors.$yellow-900;
         text-transform: uppercase;
         line-height: 1.2;

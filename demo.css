@@ -5,25 +5,23 @@ main {
   padding-inline: 1rem;
 }
 
-main > * {
-  margin-block-end: 1lh;
-}
-
-main > *:last-child {
-  margin-block-end: 0;
-}
-
 section.inputs {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
+  @media(min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, calc(20ch + 2rem));
+      gap: 1lh;
+  }
 }
 
 div.buttons {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-columns: repeat(4, min-content);
   gap: 1lh;
   inline-size: 100%;
   flex: 0;
+  grid-column: span 2;
+}
+
+label:has(input[type="file"]) {
+  grid-column: span 2;
 }

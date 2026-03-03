@@ -1,3 +1,7 @@
+@use './colors';
+@use './fonts';
+@use './sizes';
+
 :root {
   --body-bg: $body-bg;
   --body-shadow: $body-shadow:;
@@ -69,6 +73,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  background: colors.$body-bg;
+  font-family: fonts.$body;
+  font-size: sizes.$text-body;
+  line-height: sizes.$text-body-lh;
+  color: colors.$text;
 }
 
 img {

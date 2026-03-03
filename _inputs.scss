@@ -1,21 +1,48 @@
 @use 'sass:color';
 @use './colors';
 @use './fonts';
+@use './sizes';
 
-label {
+// labels and fieldsets
+
+label,
+fieldset {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   gap: 1rem;
-  align-items: center;
+  align-items: flex-start;
+  min-inline-size: 20ch;
   max-inline-size: 100%;
-}
-
-label:has(input),
-label:has(+ input) {
+  block-size: fit-content;
+  font-weight: 700;
+  margin-block-end: 1lh;
   background: colors.$label-bg;
   box-shadow: 0 2px 2px colors.$label-shadow;
   padding: 0.5lh;
+  border: 0;
 }
+
+fieldset > label {
+  background-color: transparent;
+  box-shadow: unset;
+  display: block;
+  margin-block-end: 0;
+  min-inline-size: 20ch;
+  max-inline-size: 100%;
+}
+
+fieldset > legend {
+  display: block;
+  background: colors.$input-bg;
+  color: colors.$text;
+  font-family: fonts.$heading;
+  text-transform: uppercase;
+  padding: sizes.$size-1 sizes.$size-4;
+  cursor: default;
+  box-shadow: 0 2px 2px colors.$label-shadow;
+}
+
+// inputs
 
 input:not([type=file], [type=range]),
 textarea,
@@ -31,9 +58,10 @@ datalist {
 
   &[type=radio],
   &[type=checkbox] {
-    accent-color: light-dark(colors.$input-fg, white);
-    border: solid 1px colors.$input-fg;
-    background-color: white;
+    accent-color: colors.$input-fg;
+    background-color: colors.$input-bg;
+    height: 1lh;
+    aspect-ratio: 1;
   }
 
   &::placeholder {
@@ -41,14 +69,27 @@ datalist {
   }
 }
 
-input[type=text],
-input[type=email],
-input[type=password],
-input[type=date],
-input[type=datetime-local],
+label:has([type=radio], [type=checkbox]) {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 0.5lh;
+}
+
+label:has(input:disabled),
+input:disabled {
+  cursor: not-allowed;
+}
+
+fieldset>label:has(input:disabled) {
+  opacity: 0.5;
+}
+
+input:not([type=file], [type=range]),
 textarea,
-input[list] {
-  box-shadow: 0 2px 2px colors.$input-shadow;
+select {
+  box-shadow: inset 0 2px 2px colors.$input-shadow;
+  inline-size: 100%;
 
   &::placeholder {
     color: colors.$input-placeholder;
@@ -69,19 +110,19 @@ input[list] {
 
 input[type=color] {
   all: unset;
-  inline-size: 7.5rem;
   block-size: 2rem;
   padding: 0;
   margin: 0;
   cursor: pointer;
 }
 
-input[type=file] {
-  font-family: fonts.$body;
-}
+label:has(input[type=file]) {
+  inline-size: fit-content;
 
-input[type=file]::file-selector-button {
-  margin-inline-end: 1rem;
+  input {
+    font-family: fonts.$body;
+    inline-size: 100%;
+  }
 }
 
 select {
@@ -95,15 +136,11 @@ select {
   background-size: 1rem;
 }
 
-input[type=text],
-input[type=email],
-input[type=password],
-input[type=date],
-input[type=datetime-local],
-input[list],
+input:not([type=radio], [type=checkbox]),
+input[type=color],
 select,
 textarea {
-  inline-size: 20ch;
+  inline-size: 100%;
 }
 
 input[type=file]::file-selector-button {
@@ -111,15 +148,15 @@ input[type=file]::file-selector-button {
   color: colors.$button-fg;
   text-shadow: 0 2px 0 colors.$button-bg-shadow;
   box-shadow: 0 4px 4px colors.$input-shadow;
-  padding: 1rem;
+  padding: sizes.$size-2 sizes.$size-4;
   border: none;
   font-family: fonts.$heading;
   text-transform: uppercase;
   font-size: 1rem;
   line-height: normal;
-  block-size: fit-content;
-  cursor: pointer;
   transition: all 0.2s ease;
+  margin-inline-end: 1rem;
+  cursor: pointer;
 
   &:hover {
     color: colors.$button-hover-fg;
@@ -134,4 +171,132 @@ input[type=file]::file-selector-button {
 
 textarea {
   resize: none;
+}
+
+// radio buttons
+
+input[type=radio] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: colors.$input-bg;
+  margin: 0;
+  padding: 0;
+  width: 1lh;
+  height: 1lh;
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+
+  &:before {
+    content: "";
+    width: 0.75em;
+    height: 0.75em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em colors.$text;
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+
+  &:focus {
+    outline: solid sizes.$size-1 colors.$text;
+  }
+}
+
+// checkboxes
+
+input[type=checkbox] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: colors.$input-bg;
+  margin: 0;
+  padding: 0;
+  width: 1lh;
+  height: 1lh;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  border: 0;
+
+  &:before {
+    content: "";
+    width: 0.8em;
+    height: 0.8em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em colors.$text;
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+
+  &:focus {
+    outline: solid sizes.$size-1 colors.$text;
+  }
+}
+
+// switches
+
+input[type=checkbox][role="switch"] {
+  border: 0;
+  border-radius: calc(sizes.$size-5 / 2);
+  block-size: sizes.$size-5;
+  inline-size: sizes.$size-6;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: sizes.$size-2;
+
+  &:before {
+    content: "";
+    width: sizes.$size-4;
+    height: sizes.$size-4;
+    border-radius: 50%;
+    transform: translateX(0);
+    transition: 120ms all ease-in-out;
+    box-shadow: inset 1em 1em colors.$brown-700;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &:checked::before {
+    box-shadow: inset 1em 1em colors.$text;
+    transform: translateX(sizes.$size-4);
+  }
+
+  &:focus {
+    outline: solid sizes.$size-1 colors.$text;
+  }
+}
+
+// range
+
+input[type=range] {
+  inline-size: 100%;
+  background: transparent;
+  appearance: none;
+
+  &::-webkit-slider-runnable-track {
+    background-image: linear-gradient(colors.$brown-700);
+    background-size: 100% sizes.$size-2;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &::-webkit-slider-thumb {
+    box-shadow: 0 sizes.$size-1 0 colors.$article-heading-fg-shadow;
+    height: sizes.$size-4;
+    width: sizes.$size-4;
+    border-radius: 50%;
+    background: colors.$text;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
 }
