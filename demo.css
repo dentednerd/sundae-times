@@ -3,9 +3,15 @@ main {
   max-inline-size: 800px;
   margin: 1rem auto;
   padding-inline: 1rem;
+
+  h3 {
+    margin-block-start: 64px;
+  }
 }
 
 section.inputs {
+  container-type: inline-size;
+
   @media(min-width: 768px) {
       display: grid;
       grid-template-columns: repeat(auto-fill, calc(20ch + 2rem));
@@ -14,8 +20,8 @@ section.inputs {
 }
 
 div.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, min-content);
+  display: flex;
+  flex-flow: row wrap;
   gap: 1lh;
   inline-size: 100%;
   flex: 0;
@@ -24,4 +30,11 @@ div.buttons {
 
 label:has(input[type="file"]) {
   grid-column: span 2;
+}
+
+div:has(span.badge, div.ribbon) {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5lh;
+  margin-block-end: 1lh;
 }

@@ -3,68 +3,31 @@
 @use './sizes';
 
 :root {
-  --body-bg: $body-bg;
-  --body-shadow: $body-shadow:;
-  --text: $text;
+  --blue: #{colors.$blue};
+  --blue-shadow: #{colors.$blue-shadow};
+  --pink: #{colors.$pink};
+  --pink-shadow: #{colors.$pink-shadow};
+  --green: #{colors.$green};
+  --green-shadow: #{colors.$green-shadow};
+  --yellow: #{colors.$yellow};
+  --yellow-shadow: #{colors.$yellow-shadow};
 
-  --article-bg: $article-bg;
-  --article-bg-shadow: $article-bg-shadow;
+  --body-bg: #{colors.$body-bg};
+  --body-shadow: #{colors.$body-shadow};
+  --body-text: #{colors.$body-text};
 
-  --article-heading-fg: $article-heading-fg;
-  --article-heading-bg: $article-heading-bg;
-  --article-heading-fg-shadow: $article-heading-fg-shadow;
+  --link-fg: #{colors.$link-fg};
+  --link-bg: #{colors.$link-bg};
 
-  --article-content-bg: $article-content-bg;
-  --article-content-shadow: $article-content-shadow;
+  --blockquote-fg: #{colors.$blockquote-fg};
+  --blockquote-link-fg: #{colors.$blockquote-link-fg};
+  --blockquote-link-bg: #{colors.$blockquote-link-bg};
 
-  --heading-1: $heading-1;
-  --heading-1-shadow: $heading-1-shadow;
-  --heading-shadow: $heading-shadow;
-  --heading-6: $heading-6;
-
-  --link-fg: $link-fg;
-  --link-bg: $link-bg;
-
-  --blockquote-bg: $blockquote-bg;
-  --blockquote-border: $blockquote-border;
-  --blockquote-fg: $blockquote-fg;
-  --blockquote-link-fg: $blockquote-link-fg;
-  --blockquote-link-bg: $blockquote-link-bg;
-
-  --list-border: $list-border;
-
-  --pre-bg: $pre-bg;
-  --pre-border: $pre-border;
-
-  --label-bg: $label-bg;
-  --label-shadow: $label-shadow;
-
-  --input-bg: $input-bg;
-  --input-bg-shadow: $input-bg-shadow;
-  --input-shadow: $input-shadow;
-  --input-fg: $input-fg;
-  --input-placeholder: $input-placeholder;
-
-  --button-bg: $button-bg;
-  --button-bg-shadow: $button-bg-shadow;
-  --button-fg: $button-fg;
-  --button-hover-fg: $button-hover-fg;
-
-  --success-bg: $success-bg;
-  --success-shadow: $success-shadow;
-
-  --info-bg: $info-bg;
-  --info-shadow: $info-shadow;
-
-  --error-bg: $error-bg;
-  --error-shadow: $error-shadow;
-
-  --warning-bg: $warning-bg;
-  --warning-shadow: $warning-shadow;
-  --warning-fg: $warning-fg;
-
-  --popover-backdrop: $popover-backdrop;
-  --popover-shadow: $popover-shadow;
+  --input-bg: #{colors.$input-bg};
+  --input-bg-shadow: #{colors.$input-bg-shadow};
+  --input-shadow: #{colors.$input-shadow};
+  --input-fg: #{colors.$input-fg};
+  --input-placeholder: #{colors.$input-placeholder};
 }
 
 *,
@@ -80,7 +43,7 @@ body {
   font-family: fonts.$body;
   font-size: sizes.$text-body;
   line-height: sizes.$text-body-lh;
-  color: colors.$text;
+  color: colors.$body-text;
 }
 
 img {

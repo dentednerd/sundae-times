@@ -1,0 +1,48 @@
+@use '../colors';
+@use '../sizes';
+@use '../shadows';
+
+@mixin check-radio-styles() {
+  @include shadows.input-inset();
+  -webkit-appearance: none;
+  appearance: none;
+  accent-color: colors.$input-fg;
+  background-color: colors.$input-bg;
+  margin: 0;
+  padding: 0;
+  inline-size: sizes.$size-5;
+  aspect-ratio: 1;
+  border: 0;
+  display: grid;
+  place-content: center;
+
+  &:before {
+    content: "";
+    inline-size: sizes.$size-4;
+    aspect-ratio: 1;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset sizes.$size-5 sizes.$size-5 colors.$body-text;
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+
+  &:focus {
+    outline: solid sizes.$size-1 colors.$body-text;
+  }
+}
+
+input[type=checkbox] {
+  @include check-radio-styles();
+}
+
+input[type=radio] {
+  @include check-radio-styles();
+  border-radius: 50%;
+
+  &:before {
+    border-radius: 50%;
+  }
+}

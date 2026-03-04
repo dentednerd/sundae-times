@@ -11,3 +11,8 @@ $size-8: 104px;
 // SEMANTIC VARIABLES
 $text-body: $size-4;
 $text-body-lh: $size-5;
+
+$heading-1: clamp($size-6, calc(12cqi + $size-3), $size-7);
+$heading-2: clamp($size-5, calc(10cqi + $size-2), $size-6);
+
+$article-spacing: clamp($size-3, 2vw + $size-4, $size-6);

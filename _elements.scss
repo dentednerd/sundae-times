@@ -1,17 +1,18 @@
 @use './colors';
 @use './fonts';
 @use './sizes';
+@use './shadows';
 
 hr {
-  margin-block: sizes.$size-5;
+  margin-block: sizes.$size-7;
   border: none;
   border-top: solid sizes.$size-1 colors.$brown-700;
 }
 
 details {
-  background-color: colors.$label-bg;
+  @include shadows.drop-shadow(colors.$body-shadow);
+  background-color: colors.$yellow;
   padding: sizes.$size-5;
-  box-shadow: 0 2px 2px colors.$label-shadow;
   cursor: pointer;
   margin-block-end: 0;
 
@@ -36,37 +37,49 @@ span.badge {
   font-size: sizes.$size-4;
   line-height: sizes.$size-4;
   text-transform: uppercase;
-  padding: sizes.$size-2 sizes.$size-3;
-  background-color: colors.$button-bg;
-  color: colors.$button-fg;
+  padding: sizes.$size-1 sizes.$size-3;
   cursor: default;
-  box-sizing: border-box;
+}
+
+.ribbon {
+  block-size: fit-content;
+  inline-size: fit-content;
+  text-shadow: 0 1px 0 colors.$blue-shadow;
+  border: 2px dashed colors.$blue-shadow;
+  padding: sizes.$size-2 sizes.$size-5;
+  box-shadow: 0 0 0 4px colors.$blue, 0 6px 6px colors.$body-shadow;
+  margin: 4px;
+  margin-block-end: 4px + sizes.$size-5;
 
   &[data-variant=success] {
-    background-color: colors.$success-bg;
+    border-color: colors.$green-shadow;
+    text-shadow: 0 1px 0 colors.$green-shadow;
+    box-shadow: 0 0 0 4px colors.$green, 0 6px 6px colors.$body-shadow;
   }
-
   &[data-variant=info] {
-    background-color: colors.$info-bg;
+    border-color: colors.$input-placeholder;
+    text-shadow: 0 1px 0 colors.$input-placeholder;
+    box-shadow: 0 0 0 4px colors.$input-bg, 0 6px 6px colors.$body-shadow;
   }
-
   &[data-variant=error] {
-    background-color: colors.$error-bg;
+    border-color: colors.$red-400;
+    text-shadow: 0 1px 0 colors.$pink-shadow;
+    box-shadow: 0 0 0 4px colors.$pink, 0 6px 6px colors.$body-shadow;
   }
-
   &[data-variant=warning] {
-    background-color: colors.$warning-bg;
-    color: colors.$warning-fg;
+    border-color: colors.$body-text;
+    text-shadow: 0 1px 0 colors.$yellow-shadow;
+    box-shadow: 0 0 0 4px colors.$yellow, 0 6px 6px colors.$body-shadow;
   }
 
   &[data-variant=outline] {
-    background-color: transparent;
-    color: colors.$text;
-    border: solid sizes.$size-1 colors.$text;
+    border-color: colors.$body-text;
+    text-shadow: unset;
+    box-shadow: 0 0 0 4px colors.$body-bg;
   }
-
   &[data-variant=ghost] {
-    background-color: transparent;
-    color: colors.$text;
+    border-color: colors.$yellow-500;
+    text-shadow: unset;
+    box-shadow: 0 0 0 4px colors.$body-bg;
   }
 }

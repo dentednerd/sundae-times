@@ -1,0 +1,36 @@
+@use '../colors';
+@use '../fonts';
+@use '../sizes';
+@use '../shadows';
+
+input[type=file] {
+  font-family: fonts.$body;
+  inline-size: 100%;
+
+  &::file-selector-button {
+    @include shadows.drop-shadow(colors.$body-shadow);
+    background-color: colors.$input-bg;
+    color: colors.$input-fg;
+    text-shadow: 0 1px 0 colors.$input-placeholder;
+    padding: sizes.$size-2 sizes.$size-4;
+    border: none;
+    font-family: fonts.$heading;
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: normal;
+    transition: all 0.2s ease;
+    margin-inline-end: sizes.$size-5;
+    margin-block-end: sizes.$size-3;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(0.9);
+      transition: all 0.2s ease;
+      box-shadow: 0 sizes.$size-1 sizes.$size-1 colors.$body-shadow;
+    }
+
+    &:active {
+      transform: scale(0.8);
+    }
+  }
+}

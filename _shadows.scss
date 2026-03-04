@@ -1,0 +1,12 @@
+@use './colors';
+@use './sizes';
+
+// inset box-shadow for inputs
+@mixin input-inset() {
+  box-shadow: inset 0 sizes.$size-1 sizes.$size-1 colors.$input-shadow;
+}
+
+// drop-shadow for block-level elements; use parent's shadow colour
+@mixin drop-shadow($color) {
+  box-shadow: 0 sizes.$size-2 sizes.$size-2 $color;
+}

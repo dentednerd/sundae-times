@@ -1,51 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto+Slab:wght@100..900&family=Satisfy&display=swap");
 :root {
-  --body-bg: $body-bg;
-  --body-shadow: $body-shadow:;
-  --text: $text;
-  --article-bg: $article-bg;
-  --article-bg-shadow: $article-bg-shadow;
-  --article-heading-fg: $article-heading-fg;
-  --article-heading-bg: $article-heading-bg;
-  --article-heading-fg-shadow: $article-heading-fg-shadow;
-  --article-content-bg: $article-content-bg;
-  --article-content-shadow: $article-content-shadow;
-  --heading-1: $heading-1;
-  --heading-1-shadow: $heading-1-shadow;
-  --heading-shadow: $heading-shadow;
-  --heading-6: $heading-6;
-  --link-fg: $link-fg;
-  --link-bg: $link-bg;
-  --blockquote-bg: $blockquote-bg;
-  --blockquote-border: $blockquote-border;
-  --blockquote-fg: $blockquote-fg;
-  --blockquote-link-fg: $blockquote-link-fg;
-  --blockquote-link-bg: $blockquote-link-bg;
-  --list-border: $list-border;
-  --pre-bg: $pre-bg;
-  --pre-border: $pre-border;
-  --label-bg: $label-bg;
-  --label-shadow: $label-shadow;
-  --input-bg: $input-bg;
-  --input-bg-shadow: $input-bg-shadow;
-  --input-shadow: $input-shadow;
-  --input-fg: $input-fg;
-  --input-placeholder: $input-placeholder;
-  --button-bg: $button-bg;
-  --button-bg-shadow: $button-bg-shadow;
-  --button-fg: $button-fg;
-  --button-hover-fg: $button-hover-fg;
-  --success-bg: $success-bg;
-  --success-shadow: $success-shadow;
-  --info-bg: $info-bg;
-  --info-shadow: $info-shadow;
-  --error-bg: $error-bg;
-  --error-shadow: $error-shadow;
-  --warning-bg: $warning-bg;
-  --warning-shadow: $warning-shadow;
-  --warning-fg: $warning-fg;
-  --popover-backdrop: $popover-backdrop;
-  --popover-shadow: $popover-shadow;
+  --blue: hsl(180, 25%, 70%);
+  --blue-shadow: hsl(180, 25%, 50%);
+  --pink: hsl(0, 80%, 80%);
+  --pink-shadow: hsl(0, 80%, 70%);
+  --green: hsl(140, 25%, 70%);
+  --green-shadow: hsl(140, 25%, 50%);
+  --yellow: hsl(50, 100%, 80%);
+  --yellow-shadow: hsl(50, 100%, 50%);
+  --body-bg: hsl(50, 100%, 95%);
+  --body-shadow: hsl(0, 14%, 80%);
+  --body-text: hsl(0, 14%, 50%);
+  --link-fg: hsl(0, 80%, 70%);
+  --link-bg: hsl(0, 80%, 80%);
+  --blockquote-fg: hsl(0, 14%, 30%);
+  --blockquote-link-fg: hsl(0, 80%, 40%);
+  --blockquote-link-bg: hsl(50, 100%, 90%);
+  --input-bg: hsl(180, 25%, 90%);
+  --input-bg-shadow: hsl(180, 25%, 70%);
+  --input-shadow: hsl(0, 14%, 70%);
+  --input-fg: hsl(180, 25%, 30%);
+  --input-placeholder: hsl(180, 25%, 60%);
 }
 
 *,
@@ -69,35 +44,67 @@ img {
 }
 
 p {
-  margin-block-end: 1rem;
-}
-p:last-child {
-  margin-block-end: 0;
+  margin-block-end: 24px;
 }
 
 h1 {
   font-family: "Satisfy", cursive;
-  font-size: 64px;
-  line-height: 64px;
+  font-size: clamp(40px, 12cqi + 8px, 64px);
+  line-height: clamp(40px, 12cqi + 8px, 64px);
   color: hsl(180, 25%, 70%);
-  text-shadow: 2px 2px 0 hsl(50, 100%, 95%), 4px 4px 0 hsl(0, 14%, 90%);
+  text-shadow: 1px 1px 0 hsl(50, 100%, 95%), 3px 3px 0 hsl(0, 14%, 80%);
 }
 
 h2 {
   font-family: "Fjalla One", sans-serif;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: clamp(24px, 10cqi + 4px, 40px);
+  line-height: clamp(24px, 10cqi + 4px, 40px);
   letter-spacing: -2px;
   text-shadow: 1px 1px 0 hsl(50, 100%, 95%), 2px 2px 0 hsl(0, 14%, 80%);
 }
 h2:first-letter {
   font-family: "Satisfy", cursive;
-  font-size: 64px;
-  line-height: 64px;
+  font-size: clamp(40px, 12cqi + 8px, 64px);
+  line-height: clamp(40px, 12cqi + 8px, 64px);
   text-transform: uppercase;
 }
 
 h3 {
+  background-color: hsl(180, 25%, 70%);
+  color: hsl(50, 100%, 95%);
+  block-size: fit-content;
+  inline-size: fit-content;
+  text-shadow: 0 1px 0 hsl(180, 25%, 50%);
+  border: 2px dashed hsl(180, 25%, 50%);
+  padding: 4px 24px;
+  box-shadow: 0 0 0 4px hsl(180, 25%, 70%), 0 6px 6px hsl(0, 14%, 80%);
+  margin: 4px;
+  font-family: "Fjalla One", sans-serif;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 hsl(180, 25%, 70%), 2px 2px 0 hsl(180, 25%, 50%);
+}
+
+h4 {
+  background-color: hsl(50, 100%, 80%);
+  color: hsl(0, 14%, 50%);
+  block-size: fit-content;
+  inline-size: fit-content;
+  text-shadow: 0 1px 0 hsl(50, 100%, 50%);
+  border: 2px dashed hsl(0, 14%, 50%);
+  padding: 4px 16px;
+  box-shadow: 0 0 0 4px hsl(50, 100%, 80%), 0 6px 6px hsl(0, 14%, 80%);
+  margin: 4px;
+  font-family: "Satisfy", cursive;
+  font-size: 24px;
+  line-height: 24px;
+  text-shadow: 0 2px 0 hsl(50, 100%, 50%);
+}
+
+h5 {
   font-family: "Fjalla One", sans-serif;
   font-weight: normal;
   font-size: 24px;
@@ -107,26 +114,11 @@ h3 {
   text-shadow: 1px 1px 0 hsl(50, 100%, 95%), 2px 2px 0 hsl(0, 14%, 80%);
 }
 
-h4 {
+h6 {
   font-family: "Satisfy", cursive;
   font-size: 24px;
   line-height: 24px;
   text-shadow: 1px 1px 0 hsl(50, 100%, 95%), 2px 2px 0 hsl(0, 14%, 80%);
-}
-
-h5 {
-  font-family: "Fjalla One", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.5px;
-}
-
-h6 {
-  font-family: "Fjalla One", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: -0.5px;
-  color: hsl(0, 14%, 60%);
 }
 
 h1,
@@ -142,33 +134,33 @@ a {
   text-decoration: none;
   color: hsl(0, 80%, 70%);
   background-image: linear-gradient(hsl(0, 80%, 80%));
-  background-size: 200% 0.25rem;
+  background-size: 200% 2px;
   background-position: 200% 100%;
   background-repeat: no-repeat;
   transition: background-size 0.3s, background-position 0.3s 0.3s;
 }
 a:hover {
-  color: hsl(50, 100%, 90%);
+  color: hsl(50, 100%, 95%);
   transition: background-size 0.3s 0.3s, background-position 0.3s, color 0.3s 0.3s;
   background-size: 200% 100%;
   background-position: 100% 100%;
 }
 @starting-style {
   a:hover {
-    background-size: 200% 0.25rem;
-    background-position: 200% 100%;
+    background-size: 200% 2px;
+    background-position: 200% 200%;
   }
 }
 
 blockquote {
   background: hsl(0, 80%, 80%);
-  border-inline-start: solid 0.5lh hsl(0, 80%, 70%);
-  padding: 0.5lh;
+  border-inline-start: solid 16px hsl(0, 80%, 70%);
+  padding: 24px;
   color: hsl(0, 14%, 30%);
-  margin-block-end: 1lh;
+  margin-block-end: 24px;
 }
 blockquote p {
-  margin-block-end: 1rem;
+  margin-block-end: 24px;
 }
 blockquote p:last-child {
   margin-block-end: 0;
@@ -186,20 +178,20 @@ blockquote img {
 
 ul,
 ol {
-  margin: 2rem 0;
-  padding-inline: 1.5lh;
-  border-inline-start: solid 0.5lh hsl(0, 14%, 60%);
+  margin: 24px 0;
+  padding-inline: 40px;
+  border-inline-start: solid 16px hsl(0, 14%, 50%);
 }
 
 pre {
   background: hsl(50, 100%, 80%);
-  border-inline-start: solid 0.5lh hsl(50, 100%, 60%);
-  padding: 0.5lh;
+  border-inline-start: solid 16px hsl(50, 100%, 50%);
+  padding: 16px;
   overflow: hidden;
 }
 
 code {
-  background-color: color-mix(in hsl, hsl(0, 80%, 80%) 20%, transparent 80%);
+  background-color: color-mix(in hsl, hsl(0, 80%, 70%) 20%, transparent 80%);
   border-radius: 0.2rem;
 }
 
@@ -207,16 +199,81 @@ blockquote code {
   background-color: color-mix(in hsl, hsl(50, 100%, 95%) 30%, transparent 70%);
 }
 
+p:last-child,
+ul:last-child,
+ol:last-child,
+pre:last-child,
+blockquote:last-child {
+  margin-block-end: 0;
+}
+
+[data-variant=primary] {
+  background-color: hsl(180, 25%, 70%);
+  color: hsl(50, 100%, 95%);
+  text-shadow: 0 1px 0 hsl(180, 25%, 50%);
+  border: solid 2px transparent;
+  box-sizing: content-box;
+}
+
+[data-variant=success] {
+  background-color: hsl(140, 25%, 70%);
+  color: hsl(50, 100%, 95%);
+  text-shadow: 0 1px 0 hsl(140, 25%, 50%);
+  border: solid 2px transparent;
+  box-sizing: content-box;
+}
+
+[data-variant=info] {
+  background-color: hsl(180, 25%, 90%);
+  color: hsl(180, 25%, 30%);
+  text-shadow: 0 1px 0 hsl(180, 25%, 60%);
+  border: solid 2px transparent;
+  box-sizing: content-box;
+}
+
+[data-variant=error] {
+  background-color: hsl(0, 80%, 80%);
+  color: hsl(0, 80%, 30%);
+  text-shadow: 0 1px 0 hsl(0, 80%, 70%);
+  border: solid 2px transparent;
+  box-sizing: content-box;
+}
+
+[data-variant=warning] {
+  background-color: hsl(50, 100%, 80%);
+  color: hsl(0, 14%, 50%);
+  text-shadow: 0 1px 0 hsl(50, 100%, 50%);
+  border: solid 2px transparent;
+  box-sizing: content-box;
+}
+
+[data-variant=outline] {
+  background-color: hsl(50, 100%, 95%);
+  color: hsl(0, 14%, 50%);
+  border: solid 2px hsl(0, 14%, 50%);
+  text-shadow: unset;
+  box-sizing: content-box;
+}
+
+[data-variant=ghost] {
+  background-color: transparent;
+  color: hsl(0, 14%, 50%);
+  text-shadow: unset;
+  box-shadow: unset;
+  border: solid 2px transparent;
+  box-sizing: content-box;
+}
+
 hr {
-  margin-block: 24px;
+  margin-block: 64px;
   border: none;
   border-top: solid 2px hsl(0, 14%, 70%);
 }
 
 details {
+  box-shadow: 0 4px 4px hsl(0, 14%, 80%);
   background-color: hsl(50, 100%, 80%);
   padding: 24px;
-  box-shadow: 0 2px 2px hsl(0, 14%, 70%);
   cursor: pointer;
   margin-block-end: 0;
 }
@@ -236,257 +293,72 @@ span.badge {
   font-size: 16px;
   line-height: 16px;
   text-transform: uppercase;
-  padding: 4px 8px;
-  background-color: hsl(180, 25%, 40%);
-  color: hsl(50, 100%, 90%);
+  padding: 2px 8px;
   cursor: default;
-  box-sizing: border-box;
-}
-span.badge[data-variant=success] {
-  background-color: hsl(140, 25%, 70%);
-}
-span.badge[data-variant=info] {
-  background-color: hsl(180, 25%, 70%);
-}
-span.badge[data-variant=error] {
-  background-color: hsl(0, 80%, 80%);
-}
-span.badge[data-variant=warning] {
-  background-color: hsl(50, 100%, 70%);
-  color: hsl(50, 100%, 20%);
-}
-span.badge[data-variant=outline] {
-  background-color: transparent;
-  color: hsl(0, 14%, 50%);
-  border: solid 2px hsl(0, 14%, 50%);
-}
-span.badge[data-variant=ghost] {
-  background-color: transparent;
-  color: hsl(0, 14%, 50%);
 }
 
-label,
-fieldset {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 1rem;
-  align-items: flex-start;
-  min-inline-size: 20ch;
-  max-inline-size: 100%;
+.ribbon {
   block-size: fit-content;
-  font-weight: 700;
-  margin-block-end: 1lh;
-  background: hsl(50, 100%, 80%);
-  box-shadow: 0 2px 2px hsl(0, 14%, 70%);
-  padding: 0.5lh;
-  border: 0;
-}
-
-fieldset > label {
-  background-color: transparent;
-  box-shadow: unset;
-  display: block;
-  margin-block-end: 0;
-  min-inline-size: 20ch;
-  max-inline-size: 100%;
-}
-
-fieldset > legend {
-  display: block;
-  background: hsl(180, 25%, 90%);
-  color: hsl(0, 14%, 50%);
-  font-family: "Fjalla One", sans-serif;
-  text-transform: uppercase;
-  padding: 2px 16px;
-  cursor: default;
-  box-shadow: 0 2px 2px hsl(0, 14%, 70%);
-}
-
-input:not([type=file], [type=range]),
-textarea,
-select,
-datalist {
-  border: 0;
-  color: hsl(180, 25%, 30%);
-  background-color: hsl(180, 25%, 90%);
-  padding: 0.5rem 1rem;
-  font-family: "Roboto Slab", serif;
-  font-size: 1rem;
-  box-sizing: border-box;
-}
-input:not([type=file], [type=range])[type=radio], input:not([type=file], [type=range])[type=checkbox],
-textarea[type=radio],
-textarea[type=checkbox],
-select[type=radio],
-select[type=checkbox],
-datalist[type=radio],
-datalist[type=checkbox] {
-  accent-color: hsl(180, 25%, 30%);
-  background-color: hsl(180, 25%, 90%);
-  height: 1lh;
-  aspect-ratio: 1;
-}
-input:not([type=file], [type=range])::placeholder,
-textarea::placeholder,
-select::placeholder,
-datalist::placeholder {
-  color: hsl(180, 25%, 60%);
-}
-
-label:has([type=radio], [type=checkbox]) {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  gap: 0.5lh;
-}
-
-label:has(input:disabled),
-input:disabled {
-  cursor: not-allowed;
-}
-
-fieldset > label:has(input:disabled) {
-  opacity: 0.5;
-}
-
-input:not([type=file], [type=range]),
-textarea,
-select {
-  box-shadow: inset 0 2px 2px hsl(0, 14%, 70%);
-  inline-size: 100%;
-}
-input:not([type=file], [type=range])::placeholder,
-textarea::placeholder,
-select::placeholder {
-  color: hsl(180, 25%, 60%);
-}
-input:not([type=file], [type=range]):disabled,
-textarea:disabled,
-select:disabled {
-  box-shadow: none;
-  background-color: rgba(223.125, 235.875, 235.875, 0.5);
-}
-input:not([type=file], [type=range])::-webkit-calendar-picker-indicator,
-textarea::-webkit-calendar-picker-indicator,
-select::-webkit-calendar-picker-indicator {
-  cursor: pointer;
-  border-radius: 4px;
-  margin-inline-end: 2px;
-  filter: invert(0.8);
-}
-
-input[type=color] {
-  all: unset;
-  block-size: 2rem;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-}
-
-label:has(input[type=file]) {
   inline-size: fit-content;
+  text-shadow: 0 1px 0 hsl(180, 25%, 50%);
+  border: 2px dashed hsl(180, 25%, 50%);
+  padding: 4px 24px;
+  box-shadow: 0 0 0 4px hsl(180, 25%, 70%), 0 6px 6px hsl(0, 14%, 80%);
+  margin: 4px;
+  margin-block-end: 28px;
 }
-label:has(input[type=file]) input {
-  font-family: "Roboto Slab", serif;
-  inline-size: 100%;
+.ribbon[data-variant=success] {
+  border-color: hsl(140, 25%, 50%);
+  text-shadow: 0 1px 0 hsl(140, 25%, 50%);
+  box-shadow: 0 0 0 4px hsl(140, 25%, 70%), 0 6px 6px hsl(0, 14%, 80%);
 }
-
-select {
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 1rem;
+.ribbon[data-variant=info] {
+  border-color: hsl(180, 25%, 60%);
+  text-shadow: 0 1px 0 hsl(180, 25%, 60%);
+  box-shadow: 0 0 0 4px hsl(180, 25%, 90%), 0 6px 6px hsl(0, 14%, 80%);
 }
-
-input:not([type=radio], [type=checkbox]),
-input[type=color],
-select,
-textarea {
-  inline-size: 100%;
+.ribbon[data-variant=error] {
+  border-color: hsl(0, 80%, 40%);
+  text-shadow: 0 1px 0 hsl(0, 80%, 70%);
+  box-shadow: 0 0 0 4px hsl(0, 80%, 80%), 0 6px 6px hsl(0, 14%, 80%);
 }
-
-input[type=file]::file-selector-button {
-  background-color: hsl(180, 25%, 40%);
-  color: hsl(50, 100%, 90%);
-  text-shadow: 0 2px 0 hsl(180, 25%, 20%);
-  box-shadow: 0 4px 4px hsl(0, 14%, 70%);
-  padding: 4px 16px;
-  border: none;
-  font-family: "Fjalla One", sans-serif;
-  text-transform: uppercase;
-  font-size: 1rem;
-  line-height: normal;
-  transition: all 0.2s ease;
-  margin-inline-end: 1rem;
-  cursor: pointer;
+.ribbon[data-variant=warning] {
+  border-color: hsl(0, 14%, 50%);
+  text-shadow: 0 1px 0 hsl(50, 100%, 50%);
+  box-shadow: 0 0 0 4px hsl(50, 100%, 80%), 0 6px 6px hsl(0, 14%, 80%);
 }
-input[type=file]::file-selector-button:hover {
-  color: hsl(50, 100%, 70%);
-  transform: scale(0.9);
-  transition: all 0.2s ease;
+.ribbon[data-variant=outline] {
+  border-color: hsl(0, 14%, 50%);
+  text-shadow: unset;
+  box-shadow: 0 0 0 4px hsl(50, 100%, 95%);
 }
-input[type=file]::file-selector-button:active {
-  transform: scale(0.8);
-}
-
-textarea {
-  resize: none;
-}
-
-input[type=radio] {
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: hsl(180, 25%, 90%);
-  margin: 0;
-  padding: 0;
-  width: 1lh;
-  height: 1lh;
-  aspect-ratio: 1;
-  border: 0;
-  border-radius: 50%;
-  display: grid;
-  place-content: center;
-}
-input[type=radio]:before {
-  content: "";
-  width: 0.75em;
-  height: 0.75em;
-  border-radius: 50%;
-  transform: scale(0);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em hsl(0, 14%, 50%);
-}
-input[type=radio]:checked::before {
-  transform: scale(1);
-}
-input[type=radio]:focus {
-  outline: solid 2px hsl(0, 14%, 50%);
+.ribbon[data-variant=ghost] {
+  border-color: hsl(50, 100%, 50%);
+  text-shadow: unset;
+  box-shadow: 0 0 0 4px hsl(50, 100%, 95%);
 }
 
 input[type=checkbox] {
+  box-shadow: inset 0 2px 2px hsl(0, 14%, 70%);
   -webkit-appearance: none;
   appearance: none;
+  accent-color: hsl(180, 25%, 30%);
   background-color: hsl(180, 25%, 90%);
   margin: 0;
   padding: 0;
-  width: 1lh;
-  height: 1lh;
+  inline-size: 24px;
   aspect-ratio: 1;
+  border: 0;
   display: grid;
   place-content: center;
-  border: 0;
 }
 input[type=checkbox]:before {
   content: "";
-  width: 0.8em;
-  height: 0.8em;
+  inline-size: 16px;
+  aspect-ratio: 1;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em hsl(0, 14%, 50%);
+  box-shadow: inset 24px 24px hsl(0, 14%, 50%);
 }
 input[type=checkbox]:checked::before {
   transform: scale(1);
@@ -495,7 +367,43 @@ input[type=checkbox]:focus {
   outline: solid 2px hsl(0, 14%, 50%);
 }
 
+input[type=radio] {
+  box-shadow: inset 0 2px 2px hsl(0, 14%, 70%);
+  -webkit-appearance: none;
+  appearance: none;
+  accent-color: hsl(180, 25%, 30%);
+  background-color: hsl(180, 25%, 90%);
+  margin: 0;
+  padding: 0;
+  inline-size: 24px;
+  aspect-ratio: 1;
+  border: 0;
+  display: grid;
+  place-content: center;
+}
+input[type=radio]:before {
+  content: "";
+  inline-size: 16px;
+  aspect-ratio: 1;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 24px 24px hsl(0, 14%, 50%);
+}
+input[type=radio]:checked::before {
+  transform: scale(1);
+}
+input[type=radio]:focus {
+  outline: solid 2px hsl(0, 14%, 50%);
+}
+input[type=radio] {
+  border-radius: 50%;
+}
+input[type=radio]:before {
+  border-radius: 50%;
+}
+
 input[type=checkbox][role=switch] {
+  box-shadow: inset 0 2px 2px hsl(0, 14%, 70%);
   border: 0;
   border-radius: 12px;
   block-size: 24px;
@@ -546,13 +454,169 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
 
-button {
-  background-color: hsl(180, 25%, 40%);
-  color: hsl(50, 100%, 90%);
-  text-shadow: 0 2px 0 hsl(180, 25%, 20%);
-  box-shadow: 0 4px 4px hsl(0, 14%, 70%);
+input[type=file] {
+  font-family: "Roboto Slab", serif;
+  inline-size: 100%;
+}
+input[type=file]::file-selector-button {
+  box-shadow: 0 4px 4px hsl(0, 14%, 80%);
+  background-color: hsl(180, 25%, 90%);
+  color: hsl(180, 25%, 30%);
+  text-shadow: 0 1px 0 hsl(180, 25%, 60%);
   padding: 4px 16px;
   border: none;
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: normal;
+  transition: all 0.2s ease;
+  margin-inline-end: 24px;
+  margin-block-end: 8px;
+  cursor: pointer;
+}
+input[type=file]::file-selector-button:hover {
+  transform: scale(0.9);
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 2px hsl(0, 14%, 80%);
+}
+input[type=file]::file-selector-button:active {
+  transform: scale(0.8);
+}
+
+label,
+fieldset {
+  box-shadow: 0 4px 4px hsl(0, 14%, 80%);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  align-items: flex-start;
+  min-inline-size: 20ch;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  block-size: fit-content;
+  font-weight: 700;
+  margin-block-end: 1lh;
+  background: hsl(50, 100%, 80%);
+  padding: 0.5lh;
+  border: 0;
+}
+
+fieldset > label {
+  background-color: transparent;
+  box-shadow: unset;
+  display: block;
+  margin-block-end: 0;
+  min-inline-size: 20ch;
+  max-inline-size: 100%;
+}
+
+fieldset > legend {
+  display: block;
+  background: hsl(180, 25%, 90%);
+  color: hsl(0, 14%, 50%);
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  padding: 2px 16px;
+  cursor: default;
+  box-shadow: 0 2px 2px hsl(0, 14%, 80%);
+}
+
+input:not([type=file], [type=range]),
+textarea,
+select,
+datalist {
+  border: 0;
+  color: hsl(180, 25%, 30%);
+  background-color: hsl(180, 25%, 90%);
+  padding: 0.5rem 1rem;
+  font-family: "Roboto Slab", serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+input:not([type=file], [type=range])::placeholder,
+textarea::placeholder,
+select::placeholder,
+datalist::placeholder {
+  color: hsl(180, 25%, 60%);
+}
+
+label:has([type=radio], [type=checkbox]) {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content;
+  place-items: center start;
+}
+
+label:has(input:disabled),
+input:disabled {
+  box-shadow: unset;
+  cursor: not-allowed;
+}
+
+fieldset > label:has(input:disabled) {
+  opacity: 0.5;
+}
+
+input:not([type=file], [type=range], [type=radio], [type=checkbox]),
+textarea,
+select {
+  box-shadow: inset 0 2px 2px hsl(0, 14%, 70%);
+  inline-size: 100%;
+}
+input:not([type=file], [type=range], [type=radio], [type=checkbox])::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: hsl(180, 25%, 60%);
+}
+input:not([type=file], [type=range], [type=radio], [type=checkbox]):disabled,
+textarea:disabled,
+select:disabled {
+  box-shadow: none;
+  background-color: rgba(223.125, 235.875, 235.875, 0.5);
+}
+input:not([type=file], [type=range], [type=radio], [type=checkbox])::-webkit-calendar-picker-indicator,
+textarea::-webkit-calendar-picker-indicator,
+select::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-inline-end: 2px;
+  filter: invert(0.8);
+}
+
+input[type=color] {
+  all: unset;
+  block-size: 2rem;
+  inline-size: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+input[type=color]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type=color]::-webkit-color-swatch {
+  box-shadow: inset 0 2px 2px hsl(0, 14%, 70%);
+  border: none;
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  box-shadow: 0 4px 4px hsl(0, 14%, 80%);
+  padding: 2px 16px;
   font-family: "Fjalla One", sans-serif;
   text-transform: uppercase;
   font-size: 16px;
@@ -560,49 +624,23 @@ button {
   block-size: fit-content;
   cursor: pointer;
   transition: all 0.2s ease;
+  box-sizing: content-box;
 }
 button:hover {
-  color: hsl(50, 100%, 70%);
   transform: scale(0.9);
-  box-shadow: 0 2px 2px hsl(0, 14%, 70%);
+  box-shadow: 0 2px 2px hsl(0, 14%, 80%);
   transition: all 0.2s ease;
+}
+button:hover[data-variant=ghost] {
+  box-shadow: unset;
 }
 button:active {
   transform: scale(0.8);
 }
-button[data-variant=success] {
-  background-color: hsl(140, 25%, 70%);
-  text-shadow: 0 2px 0 hsl(140, 25%, 60%);
-}
-button[data-variant=info] {
-  background-color: hsl(180, 25%, 70%);
-  text-shadow: 0 2px 0 hsl(180, 25%, 60%);
-}
-button[data-variant=error] {
-  background-color: hsl(0, 80%, 80%);
-  color: hsl(0, 80%, 20%);
-  text-shadow: 0 2px 0 hsl(0, 80%, 70%);
-}
-button[data-variant=warning] {
-  background-color: hsl(50, 100%, 70%);
-  color: hsl(50, 100%, 20%);
-  text-shadow: 0 2px 0 hsl(50, 100%, 50%);
-}
-button[data-variant=outline] {
-  background-color: transparent;
-  color: hsl(0, 14%, 50%);
-  border: solid 2px hsl(0, 14%, 50%);
-  text-shadow: unset;
-}
-button[data-variant=ghost] {
-  background-color: transparent;
-  color: hsl(0, 14%, 50%);
-  text-shadow: unset;
-  box-shadow: unset;
-}
 button:disabled {
-  background-color: color-mix(in hsl, hsl(180, 25%, 40%), transparent 80%);
-  color: color-mix(in hsl, hsl(180, 25%, 40%), transparent 60%);
+  background-color: color-mix(in hsl, hsl(180, 25%, 90%), transparent 80%);
+  border: solid 2px transparent;
+  color: color-mix(in hsl, hsl(180, 25%, 60%), transparent 60%);
   box-shadow: unset;
   text-shadow: unset;
   cursor: not-allowed;
@@ -615,7 +653,7 @@ button:disabled:hover {
   position: relative;
 }
 [popover]:popover-open {
-  inline-size: calc(100vw - 2rem);
+  inline-size: calc(100vw - 40px);
   block-size: fit-content;
   display: grid;
   place-items: center;
@@ -627,9 +665,9 @@ button:disabled:hover {
   margin: 0;
   border: none;
   overflow: auto;
-  box-shadow: 0 0 1rem hsl(0, 14%, 40%);
+  box-shadow: 0 0 1rem hsl(0, 14%, 50%);
 }
-@media (min-width: calc(768px + 2rem)) {
+@media (min-width: 808px) {
   [popover]:popover-open {
     inline-size: 768px;
   }
@@ -647,10 +685,10 @@ button:disabled:hover {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  box-shadow: 0 4px 4px hsl(0, 14%, 40%);
+  box-shadow: 0 4px 4px hsl(180, 25%, 50%);
 }
 [popover]::backdrop {
-  background: color-mix(in hsl, hsl(0, 14%, 40%), transparent 50%);
+  background: color-mix(in hsl, hsl(0, 14%, 80%), transparent 50%);
   backdrop-filter: blur(3px);
   pointer-events: none;
 }
@@ -679,13 +717,11 @@ header h1, header p, header nav {
 header h1 {
   display: inline;
   min-block-size: 1lh;
-  font-size: clamp(40px, 12cqi + 0.5rem, 64px);
   padding: 0;
   padding-inline-start: 0.25rem;
   padding-block-end: 16px;
   border-block-end: solid 2px hsl(0, 14%, 70%);
   margin-block-end: 16px;
-  line-height: clamp(40px, 12cqi + 0.5rem, 64px);
 }
 @media (min-width: 768px) {
   header h1 {
@@ -704,7 +740,6 @@ header p {
   margin-block-start: 16px;
   padding-block: 16px;
   color: hsl(0, 80%, 70%);
-  text-shadow: 2px 2px 0 #eed;
   border-block: solid 2px hsl(0, 14%, 70%);
 }
 @media (min-width: 768px) {
@@ -784,12 +819,12 @@ nav section ul li a:hover {
 }
 
 article {
+  box-shadow: 0 4px 4px hsl(0, 14%, 80%);
   background: hsl(180, 25%, 70%);
   max-inline-size: 100%;
   margin: 4rem auto;
-  padding: clamp(0.5rem, 2vw + 0.25rem, 2rem);
+  padding: clamp(8px, 2vw + 16px, 40px);
   block-size: auto;
-  box-shadow: 0 4px 4px hsl(0, 14%, 60%);
 }
 @media (min-width: 768px) {
   article {
@@ -813,8 +848,8 @@ article h2 {
 article section {
   inline-size: 100%;
   margin: 0 auto;
-  padding: clamp(0.5rem, 2vw + 0.25rem, 2rem);
-  background: hsl(50, 100%, 90%);
+  padding: clamp(8px, 2vw + 16px, 40px);
+  background: hsl(50, 100%, 95%);
   box-shadow: 0 2px 4px hsl(180, 25%, 50%);
 }
 @media (min-width: 768px) {

@@ -22,7 +22,7 @@
           </ul>
         </section>
       </nav>
-      <p>A sweet-toothed lightweight theme with retro summer vibes.</p>
+      <p>A sweet-toothed CSS theme with retro summer vibes.</p>
     </header>
 
     <details id="intro" name="intro">
@@ -39,21 +39,31 @@
 
     <h2 id="text">Text</h2>
 
+    <h3>Blocks</h3>
+
     <p>I'm a paragraph, <a href="#">with a link</a>, and <code>a little code</code>. See there, told you that would be easy. Use absolutely no pressure. Just like an angel's wing. If we're going to have
     animals around we all have to be concerned about them and take care of them. You can create the world you want to see
     and be a part of. You have that power.</p>
-    <h1>Heading 1</h1>
-    <h2>Heading 2</h2>
-    <h3>Heading 3</h3>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6>
+
     <blockquote>
-      I'm a paragraph inside a blockquote, <a href="#">with a link</a>, and <code>a little code</code>. See there, told you that would be easy. Use absolutely no pressure. Just like an angel's wing. If we're going to have
+      I'm a paragraph inside a blockquote, <a href="#">with a link</a>, and <code>a little code</code>. See there, told you
+      that would be easy. Use absolutely no pressure. Just like an angel's wing. If we're going to have
       animals around we all have to be concerned about them and take care of them. You can create the world you want to see
       and be a part of. You have that power.</a>
     </blockquote>
+
     <pre>I'm preformatted text.</pre>
+
+    <h3>Headings</h3>
+    <h1 role="presentation">Heading 1</h1>
+    <h2 role="presentation">Heading 2</h2>
+    <h3 role="presentation" style="margin-block-start: 0;">Heading 3</h3>
+    <h4 role="presentation">Heading 4</h4>
+    <h5 role="presentation">Heading 5</h5>
+    <h6 role="presentation">Heading 6</h6>
+
+    <h3>Lists</h3>
+
     <ul>
       <li>Unordered list item one</li>
       <li>Unordered list item two</li>
@@ -153,7 +163,7 @@
         <input type="range" min="0" max="100" step="5" value="75" />
       </label>
       <div class="buttons">
-        <button type="button" popovertarget="popover">
+        <button type="button" data-variant="primary" popovertarget="popover">
           button
         </button>
         <button type="button" data-variant="success" popovertarget="popover">
@@ -188,13 +198,30 @@
       <summary>details</summary>
       <p>This is a disclosure element, powered by <code>details</code> and <code>summary</code>.</p>
     </details>
-    <span class="badge">badge</span>
-    <span class="badge" data-variant="success">success</span>
-    <span class="badge" data-variant="info">info</span>
-    <span class="badge" data-variant="error">error</span>
-    <span class="badge" data-variant="warning">warning</span>
-    <span class="badge" data-variant="outline">outline</span>
-    <span class="badge" data-variant="ghost">ghost</span>
+
+    <h3>&lt;span class="badge" /&gt;</h3>
+
+    <div>
+      <span class="badge" data-variant="primary">badge</span>
+      <span class="badge" data-variant="success">success</span>
+      <span class="badge" data-variant="info">info</span>
+      <span class="badge" data-variant="error">error</span>
+      <span class="badge" data-variant="warning">warning</span>
+      <span class="badge" data-variant="outline">outline</span>
+      <span class="badge" data-variant="ghost">ghost</span>
+    </div>
+
+    <h3>&lt;div class="ribbon" /&gt;</h3>
+
+    <div>
+      <div class="ribbon" data-variant="primary">ribbon</div>
+      <div class="ribbon" data-variant="success">success</div>
+      <div class="ribbon" data-variant="info">info</div>
+      <div class="ribbon" data-variant="error">error</div>
+      <div class="ribbon" data-variant="warning">warning</div>
+      <div class="ribbon" data-variant="outline">outline</div>
+      <div class="ribbon" data-variant="ghost">ghost</div>
+    </div>
 
     <hr />
 
@@ -207,15 +234,13 @@
   </main>
 
   <article id="popover" popover>
-    <h2>popover</h2>
     <section>
-      <p>It's hard to see things when you're too close. <a href="https://www.bobrosslipsum.com/">Take a step back and
-          look.</a></p>
+      <p>You've found a popover!</p>
       <blockquote>
-        <p>We don't need any guidelines or formats.</p>
+        <p>For more web development shenanigans, visit <a href="https://joeyimlay.dev">joeyimlay.dev</a>.</p>
       </blockquote>
     </section>
-    <button class="close-button" popovertarget="popover" popovertargetaction="hide">
+    <button class="close-button" popovertarget="popover" popovertargetaction="hide" data-variant="info">
       &#10006;
     </button>
   </article>

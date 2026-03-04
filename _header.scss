@@ -24,16 +24,13 @@ header {
   }
 
   h1 {
-    // align-self: end;
     display: inline;
     min-block-size: 1lh;
-    font-size: clamp(sizes.$size-6, calc(12cqi + 0.5rem), sizes.$size-7);
     padding: 0;
     padding-inline-start: 0.25rem;
     padding-block-end: sizes.$size-4;
     border-block-end: solid 2px colors.$brown-700;
     margin-block-end: sizes.$size-4;
-    line-height: clamp(sizes.$size-6, calc(12cqi + 0.5rem), sizes.$size-7);
 
     @media(min-width: 768px) {
       display: flex;
@@ -51,8 +48,7 @@ header {
   p {
     margin-block-start: sizes.$size-4;
     padding-block: sizes.$size-4;
-    color: colors.$red-700;
-    text-shadow: sizes.$size-1 sizes.$size-1 0 #eed;
+    color: colors.$pink-shadow;
     border-block: solid 2px colors.$brown-700;
 
     @media(min-width: 768px) {
@@ -73,8 +69,8 @@ nav {
   }
 
   section {
-    background: colors.$red-800;
-    border-inline-start: solid 0.5lh colors.$red-700;
+    background: colors.$pink;
+    border-inline-start: solid 0.5lh colors.$pink-shadow;
     padding-block: 0.5rem;
     block-size: 100%;
 

@@ -55,68 +55,33 @@ $brown-900: hsl(0, 14%, 90%);
 $brown-950: hsl(0, 14%, 95%);
 
 // SEMANTIC VARIABLES
+$blue: $blue-700;
+$blue-shadow: $blue-500;
+
+$pink: $red-800;
+$pink-shadow: $red-700;
+
+$green: $green-700;
+$green-shadow: $green-500;
+
+$yellow: $yellow-800;
+$yellow-shadow: $yellow-500;
+
+// COMPONENT VARIABLES
+
 $body-bg: $yellow-950;
-$body-shadow: $brown-600;
-$text: $brown-500;
-
-$article-bg: $blue-700;
-$article-bg-shadow: $blue-500;
-
-$article-heading-fg: $brown-500;
-$article-heading-bg: $yellow-800;
-$article-heading-fg-shadow: $yellow-500;
-
-$article-content-bg: $yellow-900;
-$article-content-shadow: $yellow-600; // TODO: needed?
-
-$heading-1: $blue-700;
-$heading-1-shadow: $brown-900;
-$heading-shadow: $brown-800;
-$heading-6: $brown-600;
+$body-shadow: $brown-800;
+$body-text: $brown-500;
 
 $link-fg: $red-700;
 $link-bg: $red-800;
 
-$blockquote-bg: $red-800;
-$blockquote-border: $red-700;
 $blockquote-fg: $brown-300;
 $blockquote-link-fg: $red-400;
 $blockquote-link-bg: $yellow-900;
-
-$list-border: $brown-600;
-
-$pre-bg: $yellow-800;
-$pre-border: $yellow-600;
-
-$label-bg: $yellow-800;
-$label-shadow: $brown-700;
 
 $input-bg: $blue-900;
 $input-bg-shadow: $blue-700;
 $input-shadow: $brown-700;
 $input-fg: $blue-300;
 $input-placeholder: $blue-600;
-
-$button-bg: $blue-400;
-$button-bg-shadow: $blue-200;
-$button-fg: $yellow-900;
-$button-hover-fg: $yellow-700;
-
-$success-bg: $green-700;
-$success-shadow: $green-600;
-$success-fg: $green-200;
-
-$info-bg: $blue-700;
-$info-shadow: $blue-600;
-$info-fg: $blue-200;
-
-$error-bg: $red-800;
-$error-shadow: $red-700;
-$error-fg: $red-200;
-
-$warning-bg: $yellow-700;
-$warning-shadow: $yellow-500;
-$warning-fg: $yellow-200;
-
-$popover-backdrop: color-mix(in hsl, $brown-400, transparent 50%);
-$popover-shadow: $brown-400;

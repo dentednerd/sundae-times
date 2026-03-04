@@ -4,66 +4,82 @@
 @use './sizes';
 
 p {
-  margin-block-end: 1rem;
-
-  &:last-child {
-    margin-block-end: 0;
-  }
+  margin-block-end: sizes.$size-5;
 }
 
 h1 {
   font-family: fonts.$cursive;
-  font-size: sizes.$size-7;
-  line-height: sizes.$size-7;
-  color: colors.$heading-1;
-  text-shadow: sizes.$size-1 sizes.$size-1 0 colors.$body-bg, sizes.$size-2 sizes.$size-2 0 colors.$heading-1-shadow;
+  font-size: sizes.$heading-1;
+  line-height: sizes.$heading-1;
+  color: colors.$blue;
+  text-shadow: 1px 1px 0 colors.$body-bg, 3px 3px 0 colors.$body-shadow;
 }
 
 h2 {
   font-family: fonts.$heading;
-  font-size: sizes.$size-6;
-  line-height: sizes.$size-6;
+  font-size: sizes.$heading-2;
+  line-height: sizes.$heading-2;
   letter-spacing: -2px;
-  text-shadow: 1px 1px 0 colors.$body-bg, sizes.$size-1 sizes.$size-1 0 colors.$heading-shadow;
+  text-shadow: 1px 1px 0 colors.$body-bg, sizes.$size-1 sizes.$size-1 0 colors.$body-shadow;
 
   &:first-letter {
     font-family: fonts.$cursive;
-    font-size: sizes.$size-7;
-    line-height: sizes.$size-7;
+    font-size: sizes.$heading-1;
+    line-height: sizes.$heading-1;
     text-transform: uppercase;
   }
 }
 
 h3 {
+  background-color: colors.$blue;
+  color: colors.$body-bg;
+  block-size: fit-content;
+  inline-size: fit-content;
+  text-shadow: 0 1px 0 colors.$blue-shadow;
+  border: 2px dashed colors.$blue-shadow;
+  padding: sizes.$size-2 sizes.$size-5;
+  box-shadow: 0 0 0 sizes.$size-2 colors.$blue, 0 6px 6px colors.$body-shadow;
+  margin: sizes.$size-2;
   font-family: fonts.$heading;
   font-weight: normal;
   font-size: sizes.$size-5;
   line-height: sizes.$size-5;
   letter-spacing: sizes.$size-1;
   text-transform: uppercase;
-  text-shadow: 1px 1px 0 colors.$body-bg, sizes.$size-1 sizes.$size-1 0 colors.$heading-shadow;
+  text-shadow: 1px 1px 0 colors.$blue, sizes.$size-1 sizes.$size-1 0 colors.$blue-shadow;
 }
 
 h4 {
+  background-color: colors.$yellow;
+  color: colors.$body-text;
+  block-size: fit-content;
+  inline-size: fit-content;
+  text-shadow: 0 1px 0 colors.$yellow-shadow;
+  border: 2px dashed colors.$body-text;
+  padding: sizes.$size-2 sizes.$size-4;
+  box-shadow: 0 0 0 sizes.$size-2 colors.$yellow, 0 6px 6px colors.$body-shadow;
+  margin: sizes.$size-2;
   font-family: fonts.$cursive;
   font-size: sizes.$size-5;
   line-height: sizes.$size-5;
-  text-shadow: 1px 1px 0 colors.$body-bg, sizes.$size-1 sizes.$size-1 0 colors.$heading-shadow;
+  text-shadow: 0 sizes.$size-1 0 colors.$yellow-shadow;
 }
 
 h5 {
   font-family: fonts.$heading;
-  font-size: sizes.$size-4;
+  font-weight: normal;
+  font-size: sizes.$size-5;
   line-height: sizes.$size-5;
-  letter-spacing: -0.5px;
+  letter-spacing: sizes.$size-1;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 colors.$body-bg, sizes.$size-1 sizes.$size-1 0 colors.$body-shadow;
 }
 
 h6 {
-  font-family: fonts.$heading;
-  font-size: sizes.$size-4;
+  font-family: fonts.$cursive;
+  font-size: sizes.$size-5;
   line-height: sizes.$size-5;
-  letter-spacing: -0.5px;
-  color: colors.$heading-6;
+  text-shadow: 1px 1px 0 colors.$body-bg, sizes.$size-1 sizes.$size-1 0 colors.$body-shadow;
 }
 
 h1,
@@ -79,35 +95,33 @@ a {
   text-decoration: none;
   color: colors.$link-fg;
   background-image: linear-gradient(colors.$link-bg);
-  background-size: 200% 0.25rem;
+  background-size: 200% sizes.$size-1;
   background-position: 200% 100%;
   background-repeat: no-repeat;
   transition: background-size .3s, background-position .3s .3s;
 
   &:hover {
-    color: colors.$article-content-bg;
+    color: colors.$body-bg;
     transition: background-size .3s .3s, background-position .3s, color .3s .3s;
     background-size: 200% 100%;
     background-position: 100% 100%;
-  }
 
-  @starting-style {
-    &:hover {
-      background-size: 200% 0.25rem;
-      background-position: 200% 100%;
+    @starting-style {
+      background-size: 200% sizes.$size-1;
+      background-position: 200% 200%;
     }
   }
 }
 
 blockquote {
-  background: colors.$blockquote-bg;
-  border-inline-start: solid 0.5lh colors.$blockquote-border;
-  padding: 0.5lh;
+  background: colors.$pink;
+  border-inline-start: solid sizes.$size-4 colors.$pink-shadow;
+  padding: sizes.$size-5;
   color: colors.$blockquote-fg;
-  margin-block-end: 1lh;
+  margin-block-end: sizes.$size-5;
 
   p {
-    margin-block-end: 1rem;
+    margin-block-end: sizes.$size-5;
 
     &:last-child {
       margin-block-end: 0;
@@ -119,7 +133,7 @@ blockquote {
     background-image: linear-gradient(colors.$blockquote-link-bg);
 
     &:hover {
-      color: colors.$blockquote-border;
+      color: colors.$pink-shadow;
     }
   }
 
@@ -130,23 +144,31 @@ blockquote {
 
 ul,
 ol {
-  margin: 2rem 0;
-  padding-inline: 1.5lh;
-  border-inline-start: solid 0.5lh colors.$list-border;
+  margin: sizes.$size-5 0;
+  padding-inline: sizes.$size-6;
+  border-inline-start: solid sizes.$size-4 colors.$body-text;
 }
 
 pre {
-  background: colors.$pre-bg;
-  border-inline-start: solid 0.5lh colors.$pre-border;
-  padding: 0.5lh;
+  background: colors.$yellow;
+  border-inline-start: solid sizes.$size-4 colors.$yellow-shadow;
+  padding: sizes.$size-4;
   overflow: hidden;
 }
 
 code {
-  background-color: color-mix(in hsl, colors.$blockquote-bg 20%, transparent 80%);
+  background-color: color-mix(in hsl, colors.$pink-shadow 20%, transparent 80%);
   border-radius: 0.2rem;
 }
 
 blockquote code {
     background-color: color-mix(in hsl, colors.$body-bg 30%, transparent 70%);
+}
+
+p:last-child,
+ul:last-child,
+ol:last-child,
+pre:last-child,
+blockquote:last-child {
+  margin-block-end: 0;
 }
