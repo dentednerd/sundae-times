@@ -7,19 +7,20 @@
 
 button {
   @include shadows.drop-shadow(colors.$body-shadow);
-  padding: sizes.$size-1 sizes.$size-4;
+  padding: sizes.$pad-xxs sizes.$pad-md;
   font-family: fonts.$heading;
   text-transform: uppercase;
-  font-size: sizes.$size-4;
+  font-size: sizes.$text-body;
   line-height: normal;
   block-size: fit-content;
   cursor: pointer;
   transition: all 0.2s ease;
   box-sizing: content-box;
+  border-color: transparent;
 
   &:hover {
     transform: scale(0.9);
-    box-shadow: 0 sizes.$size-1 sizes.$size-1 colors.$body-shadow;
+    box-shadow: 0 sizes.$pad-xxs sizes.$pad-xxs colors.$body-shadow;
     transition: all 0.2s ease;
 
     &[data-variant=ghost] {
@@ -33,7 +34,7 @@ button {
 
   &:disabled {
     background-color: color-mix(in hsl, colors.$input-bg, transparent 80%);
-    border: solid sizes.$size-1 transparent;
+    border: solid sizes.$pad-xxs transparent;
     color: color-mix(in hsl, colors.$input-placeholder, transparent 60%);
     box-shadow: unset;
     text-shadow: unset;

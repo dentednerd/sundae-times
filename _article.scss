@@ -8,7 +8,7 @@ article {
   background: colors.$blue;
   max-inline-size: 100%;
   margin: 4rem auto;
-  padding: sizes.$article-spacing;
+  padding: sizes.$base-padding;
   block-size: auto;
 
   @media(min-width: 768px) {
@@ -34,7 +34,7 @@ article {
   section {
     inline-size: 100%;
     margin: 0 auto;
-    padding: sizes.$article-spacing;
+    padding: sizes.$base-padding;
     background: colors.$body-bg;
     box-shadow: 0 2px 4px colors.$blue-shadow;
 

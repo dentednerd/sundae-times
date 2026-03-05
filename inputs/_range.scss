@@ -8,15 +8,15 @@ input[type=range] {
 
   &::-webkit-slider-runnable-track {
     background-image: linear-gradient(colors.$brown-700);
-    background-size: 100% sizes.$size-2;
+    background-size: 100% sizes.$xs;
     background-repeat: no-repeat;
     background-position: center;
   }
 
   &::-webkit-slider-thumb {
-    box-shadow: 0 sizes.$size-1 0 colors.$yellow-shadow;
-    height: sizes.$size-4;
-    width: sizes.$size-4;
+    box-shadow: 0 sizes.$xxs 0 colors.$yellow-shadow;
+    height: sizes.$md;
+    width: sizes.$md;
     border-radius: 50%;
     background: colors.$body-text;
     cursor: pointer;

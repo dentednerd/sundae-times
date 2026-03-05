@@ -6,8 +6,8 @@ header {
   display: flex;
   flex-flow: column wrap;
   container-type: inline-size;
-  padding-block-end: sizes.$size-4;
-  margin-block-end: sizes.$size-5;
+  padding-block-end: sizes.$pad-md;
+  margin-block-end: sizes.$pad-lg;
 
   @media(min-width: 768px) {
     display: grid;
@@ -16,7 +16,7 @@ header {
     row-gap: 2px;
     background: colors.$brown-700;
     padding: 0;
-    block-size: calc(sizes.$size-8 * 2);
+    block-size: calc(sizes.$pad-xxl * 2);
   }
 
   h1, p, nav {
@@ -28,16 +28,15 @@ header {
     min-block-size: 1lh;
     padding: 0;
     padding-inline-start: 0.25rem;
-    padding-block-end: sizes.$size-4;
+    padding-block-end: sizes.$pad-md;
     border-block-end: solid 2px colors.$brown-700;
-    margin-block-end: sizes.$size-4;
+    margin-block-end: sizes.$pad-md;
 
     @media(min-width: 768px) {
       display: flex;
       align-items: flex-end;
       inline-size: 100%;
       block-size: 100%;
-      font-size: sizes.$size-7;
       white-space: nowrap;
       text-overflow: ellipsis;
       border: 0;
@@ -46,8 +45,8 @@ header {
   }
 
   p {
-    margin-block-start: sizes.$size-4;
-    padding-block: sizes.$size-4;
+    margin-block-start: sizes.$pad-md;
+    padding-block: sizes.$pad-md;
     color: colors.$pink-shadow;
     border-block: solid 2px colors.$brown-700;
 
@@ -70,7 +69,7 @@ nav {
 
   section {
     background: colors.$pink;
-    border-inline-start: solid 0.5lh colors.$pink-shadow;
+    border-inline-start: solid sizes.$pad-sm colors.$pink-shadow;
     padding-block: 0.5rem;
     block-size: 100%;
 
@@ -104,7 +103,7 @@ nav {
 
       li {
         font-family: fonts.$heading;
-        font-size: sizes.$size-4;
+        font-size: sizes.$pad-md;
         color: colors.$yellow-900;
         text-transform: uppercase;
         line-height: 1.2;

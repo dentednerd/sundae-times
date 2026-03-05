@@ -5,7 +5,7 @@
   position: relative;
 
   &:popover-open {
-    inline-size: calc(100vw - sizes.$size-6);
+    inline-size: calc(100vw - (sizes.$pad-md * 2));
     block-size: fit-content;
     display: grid;
     place-items: center;
@@ -17,26 +17,26 @@
     margin: 0;
     border: none;
     overflow: auto;
-    box-shadow: 0 0 1rem colors.$body-text;
+    box-shadow: 0 0 sizes.$pad-md colors.$body-text;
 
-    @media(min-width: calc(768px + sizes.$size-6)) {
+    @media(min-width: calc(768px + (sizes.$pad-md * 2))) {
       inline-size: 768px;
     }
 
     button.close-button {
       position: fixed;
-      inset-inline-end: 0.5rem;
-      inset-block-start: 0.5rem;
-      block-size: 2lh;
-      inline-size: 2lh;
-      font-size: 1rem;
+      inset-inline-end: sizes.$pad-sm;
+      inset-block-start: sizes.$pad-sm;
+      block-size: calc(sizes.$pad-md * 2);
+      inline-size: calc(sizes.$pad-md * 2);
+      font-size: sizes.$text-body;
       line-height: 1;
       cursor: pointer;
       padding: 0;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      box-shadow: 0 4px 4px colors.$blue-shadow;
+      box-shadow: 0 sizes.$pad-xs sizes.$pad-xs colors.$blue-shadow;
     }
   }
 

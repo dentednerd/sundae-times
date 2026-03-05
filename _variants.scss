@@ -6,7 +6,7 @@
   background-color: colors.$blue;
   color: colors.$body-bg;
   text-shadow: 0 1px 0 colors.$blue-shadow;
-  border: solid sizes.$size-1 transparent;
+  border: solid sizes.$pad-xxs transparent;
   box-sizing: content-box;
 }
 
@@ -14,7 +14,7 @@
   background-color: colors.$green;
   color: colors.$body-bg;
   text-shadow: 0 1px 0 colors.$green-shadow;
-  border: solid sizes.$size-1 transparent;
+  border: solid sizes.$pad-xxs transparent;
   box-sizing: content-box;
 }
 
@@ -22,7 +22,7 @@
   background-color: colors.$input-bg;
   color: colors.$input-fg;
   text-shadow: 0 1px 0 colors.$input-placeholder;
-  border: solid sizes.$size-1 transparent;
+  border: solid sizes.$pad-xxs transparent;
   box-sizing: content-box;
 }
 
@@ -30,7 +30,7 @@
   background-color: colors.$pink;
   color: colors.$red-300;
   text-shadow: 0 1px 0 colors.$pink-shadow;
-  border: solid sizes.$size-1 transparent;
+  border: solid sizes.$pad-xxs transparent;
   box-sizing: content-box;
 }
 
@@ -38,14 +38,14 @@
   background-color: colors.$yellow;
   color: colors.$body-text;
   text-shadow: 0 1px 0 colors.$yellow-shadow;
-  border: solid sizes.$size-1 transparent;
+  border: solid sizes.$pad-xxs transparent;
   box-sizing: content-box;
 }
 
 [data-variant=outline] {
   background-color: colors.$body-bg;
   color: colors.$body-text;
-  border: solid sizes.$size-1 colors.$body-text;
+  border: solid sizes.$pad-xxs colors.$body-text;
   text-shadow: unset;
   box-sizing: content-box;
 }
@@ -55,6 +55,6 @@
   color: colors.$body-text;
   text-shadow: unset;
   box-shadow: unset;
-  border: solid sizes.$size-1 transparent;
+  border: solid sizes.$pad-xxs transparent;
   box-sizing: content-box;
 }

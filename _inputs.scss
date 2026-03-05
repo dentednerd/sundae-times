@@ -44,7 +44,7 @@ fieldset > legend {
   color: colors.$body-text;
   font-family: fonts.$heading;
   text-transform: uppercase;
-  padding: sizes.$size-1 sizes.$size-4;
+  padding: sizes.$pad-xxs sizes.$pad-md;
   cursor: default;
   box-shadow: 0 2px 2px colors.$body-shadow;
 }
@@ -128,9 +128,7 @@ input[type=color] {
   }
 }
 
-
-
-
+// select
 
 select {
   cursor: pointer;
@@ -142,6 +140,8 @@ select {
   background-position: right 1rem center;
   background-size: 1rem;
 }
+
+// textarea
 
 textarea {
   resize: none;

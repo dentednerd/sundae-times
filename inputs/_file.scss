@@ -12,21 +12,21 @@ input[type=file] {
     background-color: colors.$input-bg;
     color: colors.$input-fg;
     text-shadow: 0 1px 0 colors.$input-placeholder;
-    padding: sizes.$size-2 sizes.$size-4;
+    padding: sizes.$xs sizes.$md;
     border: none;
     font-family: fonts.$heading;
     text-transform: uppercase;
     font-size: 1rem;
     line-height: normal;
     transition: all 0.2s ease;
-    margin-inline-end: sizes.$size-5;
-    margin-block-end: sizes.$size-3;
+    margin-inline-end: sizes.$lg;
+    margin-block-end: sizes.$sm;
     cursor: pointer;
 
     &:hover {
       transform: scale(0.9);
       transition: all 0.2s ease;
-      box-shadow: 0 sizes.$size-1 sizes.$size-1 colors.$body-shadow;
+      box-shadow: 0 sizes.$xxs sizes.$xxs colors.$body-shadow;
     }
 
     &:active {

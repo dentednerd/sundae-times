@@ -10,7 +10,7 @@
   background-color: colors.$input-bg;
   margin: 0;
   padding: 0;
-  inline-size: sizes.$size-5;
+  inline-size: sizes.$lg;
   aspect-ratio: 1;
   border: 0;
   display: grid;
@@ -18,11 +18,11 @@
 
   &:before {
     content: "";
-    inline-size: sizes.$size-4;
+    inline-size: sizes.$md;
     aspect-ratio: 1;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset sizes.$size-5 sizes.$size-5 colors.$body-text;
+    box-shadow: inset sizes.$lg sizes.$lg colors.$body-text;
   }
 
   &:checked::before {
@@ -30,7 +30,7 @@
   }
 
   &:focus {
-    outline: solid sizes.$size-1 colors.$body-text;
+    outline: solid sizes.$xxs colors.$body-text;
   }
 }
 

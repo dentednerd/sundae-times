@@ -1,18 +1,45 @@
+@use "sass:math";
+@use './breakpoints';
+
 // BASE VARIABLES
-$size-1: 2px;
-$size-2: 4px;
-$size-3: 8px;
-$size-4: 16px;
-$size-5: 24px;
-$size-6: 40px;
-$size-7: 64px;
-$size-8: 104px;
+$base-size: 16;
+$xxs: calc($base-size * 0.125);
+$xs: calc($base-size * 0.25);
+$sm: calc($base-size * 0.5);
+$md: $base-size;
+$lg: calc($base-size * 1.5);
+$xl: calc($base-size * 2.5);
+$xxl: calc($base-size * 4);
+$jumbo: calc($base-size * 6.5);
+
+// TODO: revisit the above values
+
+// FUNCTION: responsive font size
+@function responsive-font-size($min-fs, $max-fs) {
+  $min-bp: breakpoints.$xs;
+  $max-bp: breakpoints.$md;
+  $bp-range: $max-bp - $min-bp;
+  $fs-range: $max-fs - $min-fs;
+  $slope: calc($fs-range / $bp-range);
+  $y-axis-intersection: calc((($min-bp * -1) * $slope + $min-fs) * 1px);
+  $preferred-fs: calc($y-axis-intersection + ($slope * 100vw));
+  @return clamp(calc($min-fs * 1px), $preferred-fs, calc($max-fs * 1px));
+}
 
 // SEMANTIC VARIABLES
-$text-body: $size-4;
-$text-body-lh: $size-5;
+$text-body: responsive-font-size(12, 20);
+$text-body-lh: 1.25;
+$base-padding: calc($text-body * 1.25);
 
-$heading-1: clamp($size-6, calc(12cqi + $size-3), $size-7);
-$heading-2: clamp($size-5, calc(10cqi + $size-2), $size-6);
+$pad-xxs: calc($base-padding * 0.125);
+$pad-xs: calc($base-padding * 0.25);
+$pad-sm: calc($base-padding * 0.5);
+$pad-md: $base-padding;
+$pad-lg: calc($base-padding * 1.5);
+$pad-xl: calc($base-padding * 2.5);
+$pad-xxl: calc($base-padding * 4);
+$pad-jumbo: calc($base-padding * 6.5);
 
-$article-spacing: clamp($size-3, 2vw + $size-4, $size-6);
+$heading-1: responsive-font-size(40, 64);
+$heading-2: responsive-font-size(24, 48);
+$heading-3: responsive-font-size(20, 36);
